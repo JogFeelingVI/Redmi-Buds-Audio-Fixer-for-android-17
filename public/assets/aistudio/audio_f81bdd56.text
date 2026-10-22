@@ -1,0 +1,232 @@
+10-22 15:59:00.651     0     0 E init    : Unable to set property 'persist.bluetooth.leaudio_offload.disabled' from uid:2000 gid:2000 pid:21954: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 15:59:00.678     0     0 E init    : Unable to set property 'bluetooth.profile.le_audio.enabled' from uid:2000 gid:2000 pid:21957: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_prop:s0)
+10-22 15:59:01.452     0     0 E init    : Unable to set property 'persist.bluetooth.a2dp_offload.disabled' from uid:2000 gid:2000 pid:21980: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 15:59:01.466     0     0 E init    : Unable to set property 'persist.sys.bluetooth.a2dp_offload' from uid:2000 gid:2000 pid:21981: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:system_prop:s0)
+10-22 16:00:20.197     0     0 E init    : Unable to set property 'persist.bluetooth.a2dp_offload.disabled' from uid:2000 gid:2000 pid:22339: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 16:01:11.919     0     0 E init    : Unable to set property 'persist.bluetooth.leaudio_offload.disabled' from uid:2000 gid:2000 pid:22747: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 16:01:11.955     0     0 E init    : Unable to set property 'bluetooth.profile.le_audio.enabled' from uid:2000 gid:2000 pid:22750: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_prop:s0)
+10-22 16:01:12.746     0     0 E init    : Unable to set property 'persist.bluetooth.a2dp_offload.disabled' from uid:2000 gid:2000 pid:22771: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 16:01:12.759     0     0 E init    : Unable to set property 'persist.sys.bluetooth.a2dp_offload' from uid:2000 gid:2000 pid:22772: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:system_prop:s0)
+10-22 16:01:59.309 31630 31630 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcast:1424 android.app.ContextImpl.closeSystemDialogs:4034 android.content.ContextWrapper.closeSystemDialogs:1573 com.android.settings.bluetooth.BluetoothPairingDialog.onCreate:152 android.app.Activity.performCreate:9340 
+10-22 16:02:00.618  1846  4411 E WindowOrganizerController: Attempting to externally change a non-organized container: Task{29e7289 #409 type=standard A=1000:.bluetooth.BluetoothPairingDialog}={handlePackageUpdate:false,} playercount=2 taskorg=android.window.ITaskOrganizer$Stub$Proxy@d7dc0fe
+10-22 16:02:01.437  1846  9157 W ActivityTaskManager: Duplicate finish request for r=ActivityRecord{49576471 u0 com.android.settings/.Settings$BlueToothPairingActivity t408 f}}
+10-22 16:02:01.462  1846  2489 E AS.AudioDeviceInventory: APM failed to make available A2DP device addr=XX:XX:XX:XX:8D:3D error=1
+10-22 16:02:12.082     0     0 E init    : Unable to set property 'persist.bluetooth.leaudio_offload.disabled' from uid:2000 gid:2000 pid:23173: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 16:02:12.111     0     0 E init    : Unable to set property 'bluetooth.profile.le_audio.enabled' from uid:2000 gid:2000 pid:23177: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_prop:s0)
+10-22 16:02:12.880     0     0 E init    : Unable to set property 'persist.bluetooth.a2dp_offload.disabled' from uid:2000 gid:2000 pid:23202: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 16:02:12.894     0     0 E init    : Unable to set property 'persist.sys.bluetooth.a2dp_offload' from uid:2000 gid:2000 pid:23203: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:system_prop:s0)
+10-22 16:02:21.639  1846  2489 E AS.AudioDeviceInventory: APM failed to make available A2DP device addr=XX:XX:XX:XX:8D:3D error=1
+10-22 16:03:40.230  1846  2489 E AS.AudioDeviceInventory: APM failed to make available A2DP device addr=XX:XX:XX:XX:8D:3D error=1
+10-22 16:03:52.347     0     0 E init    : Unable to set property 'persist.bluetooth.leaudio_offload.disabled' from uid:2000 gid:2000 pid:23540: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 16:03:52.384     0     0 E init    : Unable to set property 'bluetooth.profile.le_audio.enabled' from uid:2000 gid:2000 pid:23543: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_prop:s0)
+10-22 16:03:53.163     0     0 E init    : Unable to set property 'persist.bluetooth.a2dp_offload.disabled' from uid:2000 gid:2000 pid:23571: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 16:03:53.177     0     0 E init    : Unable to set property 'persist.sys.bluetooth.a2dp_offload' from uid:2000 gid:2000 pid:23575: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:system_prop:s0)
+10-22 16:04:01.867  1846  2489 E AS.AudioDeviceInventory: APM failed to make available A2DP device addr=XX:XX:XX:XX:8D:3D error=1
+10-22 16:24:39.885  1846  2489 E AS.AudioDeviceInventory: APM failed to make available A2DP device addr=XX:XX:XX:XX:8D:3D error=1
+10-22 16:24:57.810  1846  2489 E AS.AudioDeviceInventory: APM failed to make available A2DP device addr=XX:XX:XX:XX:8D:3D error=1
+10-22 16:25:59.422 25157 25157 E AndroidRuntime: 	at android.bluetooth.IBluetooth$Stub$Proxy.getBondedDevices(IBluetooth.java:2623)
+10-22 16:25:59.422 25157 25157 E AndroidRuntime: 	at android.bluetooth.BluetoothAdapter.lambda$getBondedDevices$30(BluetoothAdapter.java:2433)
+10-22 16:25:59.422 25157 25157 E AndroidRuntime: 	at android.bluetooth.BluetoothAdapter.$r8$lambda$qxPPj5VyD_iKGm7Xoh82AFf0KWk(BluetoothAdapter.java:0)
+10-22 16:25:59.422 25157 25157 E AndroidRuntime: 	at android.bluetooth.BluetoothAdapter$$ExternalSyntheticLambda45.applyOrThrow(D8$$SyntheticClass:0)
+10-22 16:25:59.422 25157 25157 E AndroidRuntime: 	at android.bluetooth.BluetoothUtils$RemoteExceptionIgnoringFunction.apply(BluetoothUtils.java:411)
+10-22 16:25:59.422 25157 25157 E AndroidRuntime: 	at android.bluetooth.BluetoothAdapter.callServiceIfEnabled(BluetoothAdapter.java:1041)
+10-22 16:25:59.422 25157 25157 E AndroidRuntime: 	at android.bluetooth.BluetoothAdapter.getBondedDevices(BluetoothAdapter.java:2430)
+10-22 16:26:15.757  1846  2489 E AS.AudioDeviceInventory: APM failed to make available A2DP device addr=XX:XX:XX:XX:8D:3D error=1
+10-22 16:26:17.460 23657 23679 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:109 a2dp_sdp_cback: ATTR_ID_SERVICE_NAME attr not found!!
+10-22 16:26:17.460 23657 23679 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:122 a2dp_sdp_cback: ATTR_ID_PROVIDER_NAME attr not found!!
+10-22 16:26:17.461 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:2566 ProcessEvent: Peer xx:xx:xx:xx:8d:3d : Unhandled event=BTIF_AV_AVRCP_OPEN_EVT(0x22)
+10-22 16:26:18.981 25903 25930 W AudioRoutingService: playAacStereoTest: No Bluetooth A2DP device found! Aborting to avoid phone speaker output.
+10-22 16:26:19.229 23657 23679 W bluetooth-a2dp: system/bta/av/bta_av_aact.cc:2964 bta_av_open_rc: Using the new AVRCP Profile
+10-22 16:26:44.032 31630 31645 W ProcStatsManager: No process bz.zaa.mibudsm8/10235 for service com.android.bluetooth.ble.app.headset.BluetoothHeadsetService
+10-22 16:26:44.034 31630 31645 W ProcStatsManager: No process com.android.bluetooth/1002 for service com.android.bluetooth.btservice.AdapterService
+10-22 16:26:50.920 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. Bluetooth A2dp is null.
+10-22 16:26:50.920 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:26:50.925 31630 31630 E BaseBluetoothDlgPref: Unable to get summary of 31777. Size is 4
+10-22 16:26:54.998 31630 31630 E BaseBluetoothDlgPref: Unable to get summary of 31777. Size is 4
+10-22 16:26:55.750 23657 23684 W bluetooth: system/gd/hci/hci_layer.cc:220 on_command_status: Received UNEXPECTED command status:COMMAND_DISALLOWED(0x0c) opcode:EXIT_SNIFF_MODE(0x0804)
+10-22 16:26:55.869 23657 23679 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:26:55.876  1195  1230 W BTAudioSessionAidl: ReportLowLatencyModeAllowedChanged - SessionType=A2DP_HARDWARE_OFFLOAD_ENCODING_DATAPATH has NO port state observer
+10-22 16:26:55.888  1846  2489 E AS.AudioDeviceInventory: invalid null DeviceInfo in onBluetoothDeviceConfigChange
+10-22 16:26:59.364 23657 23679 W bluetooth-a2dp: system/bta/av/bta_av_aact.cc:2964 bta_av_open_rc: Using the new AVRCP Profile
+10-22 16:27:10.545 31630 31630 W PrefCtrlListHelper: Cannot instantiate controller from reflection: com.android.settings.bluetooth.BluetoothDetailsMacAddressController
+10-22 16:27:20.758  1369  1465 W AudioFlinger: moveEffectChain_ll: effect chain for session 0 not on source thread 0xb4000072b9a6dfe8
+10-22 16:27:24.695 23657 23679 W bluetooth: system/bta/ag/bta_ag_sco.cc:1259 bta_ag_sco_event: SCO_state_change: [BTA_AG_SCO_LISTEN_ST(0x01)]->[BTA_AG_SCO_SHUTDOWN_ST(0x00)] after event [BTA_AG_SCO_SHUTDOWN_E(0x06)]
+10-22 16:27:24.737 23657 23679 W bluetooth-a2dp: system/bta/av/bta_av_aact.cc:2448 bta_av_str_closed: peer xx:xx:xx:xx:8d:3d bta_handle:0x41 open_status:0 chnl:64 co_started:0
+10-22 16:27:24.739 23657 23679 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/a2dp_encoding_aidl.cc:375 ack_stream_suspended: pending=0 ignore result=0
+10-22 16:27:24.741 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:27:24.741 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:27:24.741 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:27:24.777 23657 23700 E BluetoothActiveDeviceManager: setLeAudioActiveDevice: Le Audio service not available
+10-22 16:27:24.837 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:27:24.837 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:27:24.846 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:27:24.846 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:27:25.046 23657 23684 W BluetoothMetrics: system/metrics/src/android/metrics.cc:105 LogBluetoothEvent: Failed BluetoothEvent Upload - Address is Empty
+10-22 16:27:25.047 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:27:25.047 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:27:25.047 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:27:25.047 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:27:25.047 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:27:25.047 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:27:25.047 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:27:25.047 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:27:25.047 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:27:25.210  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: hfp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 3
+10-22 16:27:25.212  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:==========onHfpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 3
+10-22 16:27:25.213  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: hfp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 0
+10-22 16:27:25.213  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 3
+10-22 16:27:25.216  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:==========onHfpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 0
+10-22 16:27:25.217  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 3
+10-22 16:27:25.219  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothBle:-isBleConnecting- mConnectingBleDevice : null
+10-22 16:27:25.219  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothSpp:-isSppConnecting- mConnectingSppDevice : null
+10-22 16:27:25.219  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:Current connecting edr device:null
+10-22 16:27:25.219  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:-notifyEdrConnectStatus- deviceInfo : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:27:25.219  5464  5464 E DebugConfig: , status : 3, isConnecting : false, mCurrentConnectingEdrDevice : null, isRequestUuid : false, deviceA2dpStatus : 3 ,deviceHfpStatus : 0
+10-22 16:27:25.219  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 0
+10-22 16:27:25.223  5464  5464 E DebugConfig: level:5M8AIVS:M8BluetoothBase:onReceive: ACTION_ACL_DISCONNECTED, device:Redmi Buds 5 Pro type:3
+10-22 16:27:25.226  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 0
+10-22 16:27:25.227  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothBle:-isBleConnecting- mConnectingBleDevice : null
+10-22 16:27:25.227  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothSpp:-isSppConnecting- mConnectingSppDevice : null
+10-22 16:27:25.227  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:Current connecting edr device:null
+10-22 16:27:25.228  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:-notifyEdrConnectStatus- deviceInfo : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:27:25.228  5464  5464 E DebugConfig: , status : 0, isConnecting : false, mCurrentConnectingEdrDevice : null, isRequestUuid : false, deviceA2dpStatus : 0 ,deviceHfpStatus : 0
+10-22 16:27:39.205 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:27:39.205 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:27:39.205 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:27:39.256 23657 23679 W bluetooth: system/bta/ag/bta_ag_sco.cc:447 bta_ag_create_sco: device xx:xx:xx:xx:8d:3d is not active, active_device=00:00:00:00:00:00
+10-22 16:27:39.256 23657 23679 W bluetooth: system/bta/ag/bta_ag_sco.cc:1259 bta_ag_sco_event: SCO_state_change: [BTA_AG_SCO_SHUTDOWN_ST(0x00)]->[BTA_AG_SCO_LISTEN_ST(0x01)] after event [BTA_AG_SCO_LISTEN_E(0x00)]
+10-22 16:27:39.304  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: ACTION_ACL_CONNECTED,  device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:27:39.305  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 1
+10-22 16:27:39.306  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: hfp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 1
+10-22 16:27:39.307  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 1
+10-22 16:27:39.308  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothBle:-isBleConnecting- mConnectingBleDevice : null
+10-22 16:27:39.308  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothSpp:-isSppConnecting- mConnectingSppDevice : null
+10-22 16:27:39.308  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:Current connecting edr device:null
+10-22 16:27:39.308  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:-notifyEdrConnectStatus- deviceInfo : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:27:39.308  5464  5464 E DebugConfig: , status : 1, isConnecting : false, mCurrentConnectingEdrDevice : null, isRequestUuid : false, deviceA2dpStatus : 1 ,deviceHfpStatus : 0
+10-22 16:27:39.309  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:==========onHfpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 1
+10-22 16:27:39.647 23657 23657 W BluetoothRemoteDevices: Invalid parameters device=false, batteryLevel=-1
+10-22 16:27:40.145 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4036 btif_av_is_peer_edr: peer=xx:xx:xx:xx:8d:3d not connected
+10-22 16:27:40.148 23657 23679 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:27:40.156 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:27:40.156 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:27:40.160 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:27:40.160 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:27:40.188 23657 23657 E A2dpStateMachine: Connecting: ignoring event: AUDIO_DELAY_REPORTED
+10-22 16:27:40.188 23657 23657 E A2dpStateMachine:  - unhandledMessage: msg.what=104
+10-22 16:27:40.224 23657 23679 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:27:40.235  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: hfp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 2
+10-22 16:27:40.235  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 2
+10-22 16:27:40.238  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:==========onHfpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 2
+10-22 16:27:40.242 23657 23679 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:27:40.243 23657 23679 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:27:40.243  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 2
+10-22 16:27:40.251  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothBle:-isBleConnecting- mConnectingBleDevice : null
+10-22 16:27:40.251  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothSpp:-isSppConnecting- mConnectingSppDevice : null
+10-22 16:27:40.251  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:Current connecting edr device:null
+10-22 16:27:40.251  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:-notifyEdrConnectStatus- deviceInfo : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:27:40.251  5464  5464 E DebugConfig: , status : 2, isConnecting : false, mCurrentConnectingEdrDevice : null, isRequestUuid : false, deviceA2dpStatus : 2 ,deviceHfpStatus : 2
+10-22 16:27:40.255 31630 31630 E BaseBluetoothDlgPref: Unable to get summary of 31777. Size is 4
+10-22 16:27:40.264  1369  9142 E APM::HwModule: createDevice: could not find HW module for device type 'AUDIO_DEVICE_OUT_BLUETOOTH_A2DP' (00000080), encoded format 'AUDIO_FORMAT_LHDC'
+10-22 16:27:40.264  1846  2489 E AS.AudioDeviceInventory: APM failed to make available A2DP device addr=XX:XX:XX:XX:8D:3D error=1
+10-22 16:27:40.269 23657 23700 E BluetoothActiveDeviceManager: setLeAudioActiveDevice: Le Audio service not available
+10-22 16:27:40.290 31630 31630 E BaseBluetoothDlgPref: Unable to get summary of 31777. Size is 4
+10-22 16:27:40.299  1195 26312 E audio_hw_primary: offload_thread_loop: Compress handle is NULL
+10-22 16:27:40.330  1195  2435 W audio_hw_utils: audio_extn_utils_update_stream_input_app_type_cfg: App type could not be selected. Falling back to default
+10-22 16:27:40.424 23657 23679 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:109 a2dp_sdp_cback: ATTR_ID_SERVICE_NAME attr not found!!
+10-22 16:27:40.424 23657 23679 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:122 a2dp_sdp_cback: ATTR_ID_PROVIDER_NAME attr not found!!
+10-22 16:27:40.424 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:2566 ProcessEvent: Peer xx:xx:xx:xx:8d:3d : Unhandled event=BTIF_AV_AVRCP_OPEN_EVT(0x22)
+10-22 16:27:40.743  5464  5464 E DebugConfig: level:5M8AIVS:M8BluetoothBase:onReceive: ACTION_PLAYING_STATE_CHANGED, device:Redmi Buds 5 Pro state:11
+10-22 16:27:43.645 23657 23679 W bluetooth-a2dp: system/bta/av/bta_av_aact.cc:2964 bta_av_open_rc: Using the new AVRCP Profile
+10-22 16:27:55.040 25903 25903 E AndroidRuntime: 	at android.bluetooth.IBluetooth$Stub$Proxy.getBondedDevices(IBluetooth.java:2623)
+10-22 16:27:55.040 25903 25903 E AndroidRuntime: 	at android.bluetooth.BluetoothAdapter.lambda$getBondedDevices$30(BluetoothAdapter.java:2433)
+10-22 16:27:55.040 25903 25903 E AndroidRuntime: 	at android.bluetooth.BluetoothAdapter.$r8$lambda$qxPPj5VyD_iKGm7Xoh82AFf0KWk(BluetoothAdapter.java:0)
+10-22 16:27:55.040 25903 25903 E AndroidRuntime: 	at android.bluetooth.BluetoothAdapter$$ExternalSyntheticLambda45.applyOrThrow(D8$$SyntheticClass:0)
+10-22 16:27:55.040 25903 25903 E AndroidRuntime: 	at android.bluetooth.BluetoothUtils$RemoteExceptionIgnoringFunction.apply(BluetoothUtils.java:411)
+10-22 16:27:55.040 25903 25903 E AndroidRuntime: 	at android.bluetooth.BluetoothAdapter.callServiceIfEnabled(BluetoothAdapter.java:1041)
+10-22 16:27:55.040 25903 25903 E AndroidRuntime: 	at android.bluetooth.BluetoothAdapter.getBondedDevices(BluetoothAdapter.java:2430)
+10-22 16:28:07.748 31630 31630 E BaseBluetoothDlgPref: Unable to get summary of 31777. Size is 4
+10-22 16:28:10.035 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. Bluetooth A2dp is null.
+10-22 16:28:10.035 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:28:13.078 26447 26447 W MediaRouter2Helper: No Bluetooth A2DP route found in MediaRouter2
+10-22 16:28:13.079 26447 26447 W AudioRoutingService: startAacActiveKeepAliveTrack: No A2DP targetDevice found! Skipping AudioTrack to prevent phone speaker playback.
+10-22 16:28:20.304 26447 26475 E ibudsfixer.rbaf: hiddenapi: Accessing hidden field Landroid/bluetooth/BluetoothA2dp;->mService:Landroid/bluetooth/IBluetoothA2dp; (runtime_flags=0, domain=platform, api=blocked) from Lcom/example/BluetoothA2dpConnector; (domain=app, TargetSdkVersion=35) using reflection: denied
+10-22 16:28:20.306 23657 23731 W Binder  : java.lang.SecurityException: Neither user 10233 nor current process has android.permission.BLUETOOTH_PRIVILEGED.
+10-22 16:28:20.306 23657 23731 W Binder  : 	at com.android.bluetooth.a2dp.A2dpServiceBinder.setOptionalCodecsEnabled(A2dpServiceBinder.java:315)
+10-22 16:28:20.306 23657 23731 W Binder  : 	at android.bluetooth.IBluetoothA2dp$Stub.onTransact(IBluetoothA2dp.java:456)
+10-22 16:28:20.307 23657 23731 W Binder  : java.lang.SecurityException: Neither user 10233 nor current process has android.permission.BLUETOOTH_PRIVILEGED.
+10-22 16:28:20.307 23657 23731 W Binder  : 	at com.android.bluetooth.a2dp.A2dpServiceBinder.disableOptionalCodecs(A2dpServiceBinder.java:275)
+10-22 16:28:20.307 23657 23731 W Binder  : 	at android.bluetooth.IBluetoothA2dp$Stub.onTransact(IBluetoothA2dp.java:420)
+10-22 16:28:20.309 23657 23731 W Binder  : java.lang.SecurityException: The application with package name com.aistudio.redmibudsfixer.rbaf does not have a CDM association with the Bluetooth Device
+10-22 16:28:20.309 23657 23731 W Binder  : 	at com.android.bluetooth.Utils.enforceCdmAssociation(Utils.java:269)
+10-22 16:28:20.309 23657 23731 W Binder  : 	at com.android.bluetooth.Utils.enforceCdmAssociationIfNotBluetoothPrivileged(Utils.java:282)
+10-22 16:28:20.309 23657 23731 W Binder  : 	at com.android.bluetooth.a2dp.A2dpServiceBinder.setCodecConfigPreference(A2dpServiceBinder.java:248)
+10-22 16:28:20.309 23657 23731 W Binder  : 	at android.bluetooth.IBluetoothA2dp$Stub.onTransact(IBluetoothA2dp.java:400)
+10-22 16:28:20.320 23657 23657 E A2dpStateMachine: Incorrect event: 3
+10-22 16:28:20.321 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:478 IsPeerSilenced: peer is not connected
+10-22 16:28:20.366 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:28:20.366 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:28:20.817  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 3
+10-22 16:28:20.820  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 3
+10-22 16:28:20.821  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothBle:-isBleConnecting- mConnectingBleDevice : null
+10-22 16:28:20.821  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothSpp:-isSppConnecting- mConnectingSppDevice : null
+10-22 16:28:20.821  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:Current connecting edr device:null
+10-22 16:28:20.821  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:-notifyEdrConnectStatus- deviceInfo : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:28:20.821  5464  5464 E DebugConfig: , status : 3, isConnecting : false, mCurrentConnectingEdrDevice : null, isRequestUuid : false, deviceA2dpStatus : 3 ,deviceHfpStatus : 2
+10-22 16:28:21.034 23657 23679 W bluetooth-a2dp: system/bta/av/bta_av_aact.cc:2448 bta_av_str_closed: peer xx:xx:xx:xx:8d:3d bta_handle:0x41 open_status:0 chnl:64 co_started:0
+10-22 16:28:21.034 23657 23684 W bluetooth: system/gd/hci/hci_layer.cc:220 on_command_status: Received UNEXPECTED command status:COMMAND_DISALLOWED(0x0c) opcode:EXIT_SNIFF_MODE(0x0804)
+10-22 16:28:21.035 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:28:21.035 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:28:21.035 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:28:21.044 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:28:21.044 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:28:21.044 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:28:21.044 23657 23679 W bluetooth-a2dp: system/bta/av/bta_av_main.cc:970 bta_av_link_role_ok: Unable to find link role for device:00:00:00:00:00:00
+10-22 16:28:21.052 23657 23679 W bluetooth: system/stack/avct/avct_lcb.cc:406 avct_lcb_last_ccb: avct_lcb_last_ccb
+10-22 16:28:21.052 23657 23679 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:0 allocated:3, 
+10-22 16:28:21.052 23657 23679 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:1 allocated:1, 
+10-22 16:28:21.052 23657 23679 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:2 allocated:0, 
+10-22 16:28:21.052 23657 23679 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:3 allocated:0, 
+10-22 16:28:21.052 23657 23679 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:4 allocated:0, 
+10-22 16:28:21.052 23657 23679 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:5 allocated:0, 
+10-22 16:28:21.053 23657 23679 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:6 allocated:0, 
+10-22 16:28:21.053 23657 23679 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:7 allocated:0, 
+10-22 16:28:21.053 23657 23679 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:8 allocated:0, 
+10-22 16:28:21.053 23657 23679 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:9 allocated:0, 
+10-22 16:28:21.053 23657 23679 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:10 allocated:0, 
+10-22 16:28:21.053 23657 23679 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:11 allocated:0, 
+10-22 16:28:21.053 23657 23657 E A2dpStateMachine: Incorrect event: 1
+10-22 16:28:21.053 23657 23679 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:12 allocated:0, 
+10-22 16:28:21.053 23657 23679 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:13 allocated:0, 
+10-22 16:28:21.157 23657 23679 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:109 a2dp_sdp_cback: ATTR_ID_SERVICE_NAME attr not found!!
+10-22 16:28:21.157 23657 23679 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:122 a2dp_sdp_cback: ATTR_ID_PROVIDER_NAME attr not found!!
+10-22 16:28:21.157 23657 23679 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:135 a2dp_sdp_cback: ATTR_ID_SUPPORTED_FEATURES attr not found!!
+10-22 16:28:21.285 23657 23679 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:28:21.314 23657 23657 E A2dpStateMachine: Connecting: ignoring event: AUDIO_DELAY_REPORTED
+10-22 16:28:21.314 23657 23657 E A2dpStateMachine:  - unhandledMessage: msg.what=104
+10-22 16:28:21.314 23657 23667 E A2dpService: setActiveDevice(XX:XX:XX:XX:8D:3D): Cannot set as active: device is not connected
+10-22 16:28:21.394 23657 23679 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:28:21.394 23657 23679 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:28:21.412 23657 23679 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:28:21.413 23657 23679 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:28:21.429 23657 23700 E BluetoothActiveDeviceManager: setLeAudioActiveDevice: Le Audio service not available
+10-22 16:28:21.431 31630 31630 E BaseBluetoothDlgPref: Unable to get summary of 31777. Size is 4
+10-22 16:28:21.434  1369 30017 E APM::HwModule: createDevice: could not find HW module for device type 'AUDIO_DEVICE_OUT_BLUETOOTH_A2DP' (00000080), encoded format 'AUDIO_FORMAT_LHDC'
+10-22 16:28:21.434  1846  2489 E AS.AudioDeviceInventory: APM failed to make available A2DP device addr=XX:XX:XX:XX:8D:3D error=1
+10-22 16:28:21.540  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 0
+10-22 16:28:21.542  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 0
+10-22 16:28:21.543  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothBle:-isBleConnecting- mConnectingBleDevice : null
+10-22 16:28:21.543  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothSpp:-isSppConnecting- mConnectingSppDevice : null
+10-22 16:28:21.543  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:Current connecting edr device:null
+10-22 16:28:21.543  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:-notifyEdrConnectStatus- deviceInfo : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:28:21.543  5464  5464 E DebugConfig: , status : 0, isConnecting : false, mCurrentConnectingEdrDevice : null, isRequestUuid : false, deviceA2dpStatus : 0 ,deviceHfpStatus : 2
+10-22 16:28:21.544  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 1
+10-22 16:28:21.544  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 2
+10-22 16:28:21.544  5464  5464 E DebugConfig: level:5M8AIVS:M8BluetoothBase:onReceive: ACTION_PLAYING_STATE_CHANGED, device:Redmi Buds 5 Pro state:11
+10-22 16:28:21.546  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 1
+10-22 16:28:21.547  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothBle:-isBleConnecting- mConnectingBleDevice : null
+10-22 16:28:21.547  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothSpp:-isSppConnecting- mConnectingSppDevice : null
+10-22 16:28:21.547  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:Current connecting edr device:null
+10-22 16:28:21.547  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:-notifyEdrConnectStatus- deviceInfo : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:28:21.547  5464  5464 E DebugConfig: , status : 1, isConnecting : false, mCurrentConnectingEdrDevice : null, isRequestUuid : false, deviceA2dpStatus : 1 ,deviceHfpStatus : 2
+10-22 16:28:21.549  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 

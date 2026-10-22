@@ -1,0 +1,6 @@
+{
+  "name": "Redmi Buds Audio Fixer",
+  "description": "A clean Material 3 utility tool for fixing Bluetooth audio routing issues on Redmi Buds with real-time feedback animations and shell execution.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

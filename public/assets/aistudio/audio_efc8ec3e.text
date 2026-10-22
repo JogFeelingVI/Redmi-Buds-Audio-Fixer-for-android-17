@@ -1,0 +1,744 @@
+10-22 15:58:19.374  1846  2489 E AS.AudioDeviceInventory: APM failed to make available A2DP device addr=XX:XX:XX:XX:8D:3D error=1
+10-22 15:59:00.651     0     0 E init    : Unable to set property 'persist.bluetooth.leaudio_offload.disabled' from uid:2000 gid:2000 pid:21954: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 15:59:00.678     0     0 E init    : Unable to set property 'bluetooth.profile.le_audio.enabled' from uid:2000 gid:2000 pid:21957: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_prop:s0)
+10-22 15:59:01.452     0     0 E init    : Unable to set property 'persist.bluetooth.a2dp_offload.disabled' from uid:2000 gid:2000 pid:21980: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 15:59:01.466     0     0 E init    : Unable to set property 'persist.sys.bluetooth.a2dp_offload' from uid:2000 gid:2000 pid:21981: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:system_prop:s0)
+10-22 15:59:02.512  1846  2070 W UsageStatsService: Unexpected activity event reported! (com.android.settings/com.android.settings.Settings$BluetoothDeviceDetailActivity event : 23 instanceId : 245820437)
+10-22 15:59:10.342  1846  2489 E AS.AudioDeviceInventory: APM failed to make available A2DP device addr=XX:XX:XX:XX:8D:3D error=1
+10-22 16:00:20.197     0     0 E init    : Unable to set property 'persist.bluetooth.a2dp_offload.disabled' from uid:2000 gid:2000 pid:22339: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 16:01:11.919     0     0 E init    : Unable to set property 'persist.bluetooth.leaudio_offload.disabled' from uid:2000 gid:2000 pid:22747: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 16:01:11.955     0     0 E init    : Unable to set property 'bluetooth.profile.le_audio.enabled' from uid:2000 gid:2000 pid:22750: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_prop:s0)
+10-22 16:01:12.746     0     0 E init    : Unable to set property 'persist.bluetooth.a2dp_offload.disabled' from uid:2000 gid:2000 pid:22771: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 16:01:12.759     0     0 E init    : Unable to set property 'persist.sys.bluetooth.a2dp_offload' from uid:2000 gid:2000 pid:22772: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:system_prop:s0)
+10-22 16:01:21.665  1846  2489 E AS.AudioDeviceInventory: APM failed to make available A2DP device addr=XX:XX:XX:XX:8D:3D error=1
+10-22 16:01:59.309 31630 31630 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcast:1424 android.app.ContextImpl.closeSystemDialogs:4034 android.content.ContextWrapper.closeSystemDialogs:1573 com.android.settings.bluetooth.BluetoothPairingDialog.onCreate:152 android.app.Activity.performCreate:9340 
+10-22 16:02:00.618  1846  4411 E WindowOrganizerController: Attempting to externally change a non-organized container: Task{29e7289 #409 type=standard A=1000:.bluetooth.BluetoothPairingDialog}={handlePackageUpdate:false,} playercount=2 taskorg=android.window.ITaskOrganizer$Stub$Proxy@d7dc0fe
+10-22 16:02:01.437  1846  9157 W ActivityTaskManager: Duplicate finish request for r=ActivityRecord{49576471 u0 com.android.settings/.Settings$BlueToothPairingActivity t408 f}}
+10-22 16:02:01.462  1846  2489 E AS.AudioDeviceInventory: APM failed to make available A2DP device addr=XX:XX:XX:XX:8D:3D error=1
+10-22 16:02:04.907 22825 22847 W bluetooth-a2dp: system/bta/av/bta_av_aact.cc:2964 bta_av_open_rc: Using the new AVRCP Profile
+10-22 16:02:12.838 23173 23173 W libc    : Unable to set property "persist.bluetooth.leaudio_offload.disabled" to "true": PROP_ERROR_PERMISSION_DENIED (0x18)
+10-22 16:02:12.833     1     1 W /system/bin/init: type=1107 audit(0.0:2838): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.bluetooth.leaudio_offload.disabled pid=23173 uid=2000 gid=2000 scontext=u:r:shell:s0 tcontext=u:object_r:bluetooth_a2dp_offload_prop:s0 tclass=property_service permissive=0'
+10-22 16:02:12.082     0     0 E init    : Unable to set property 'persist.bluetooth.leaudio_offload.disabled' from uid:2000 gid:2000 pid:23173: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 16:02:12.865     1     1 W /system/bin/init: type=1107 audit(0.0:2839): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=bluetooth.profile.le_audio.enabled pid=23177 uid=2000 gid=2000 scontext=u:r:shell:s0 tcontext=u:object_r:bluetooth_prop:s0 tclass=property_service permissive=0'
+10-22 16:02:12.868 23177 23177 W libc    : Unable to set property "bluetooth.profile.le_audio.enabled" to "false": PROP_ERROR_PERMISSION_DENIED (0x18)
+10-22 16:02:12.111     0     0 E init    : Unable to set property 'bluetooth.profile.le_audio.enabled' from uid:2000 gid:2000 pid:23177: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_prop:s0)
+10-22 16:02:12.945 23186 23186 W libc    : Access denied finding property "bluetooth.profile.le_audio.enabled"
+10-22 16:02:12.941 23186 23186 W getprop : type=1400 audit(0.0:2840): avc:  denied  { read } for  name="u:object_r:bluetooth_prop:s0" dev="tmpfs" ino=3171 scontext=u:r:shell:s0 tcontext=u:object_r:bluetooth_prop:s0 tclass=file permissive=0
+10-22 16:02:13.633     1     1 W /system/bin/init: type=1107 audit(0.0:2841): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.bluetooth.a2dp_offload.disabled pid=23202 uid=2000 gid=2000 scontext=u:r:shell:s0 tcontext=u:object_r:bluetooth_a2dp_offload_prop:s0 tclass=property_service permissive=0'
+10-22 16:02:13.637 23202 23202 W libc    : Unable to set property "persist.bluetooth.a2dp_offload.disabled" to "true": PROP_ERROR_PERMISSION_DENIED (0x18)
+10-22 16:02:12.880     0     0 E init    : Unable to set property 'persist.bluetooth.a2dp_offload.disabled' from uid:2000 gid:2000 pid:23202: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 16:02:13.649     1     1 W /system/bin/init: type=1107 audit(0.0:2842): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.sys.bluetooth.a2dp_offload pid=23203 uid=2000 gid=2000 scontext=u:r:shell:s0 tcontext=u:object_r:system_prop:s0 tclass=property_service permissive=0'
+10-22 16:02:13.651 23203 23203 W libc    : Unable to set property "persist.sys.bluetooth.a2dp_offload" to "false": PROP_ERROR_PERMISSION_DENIED (0x18)
+10-22 16:02:12.894     0     0 E init    : Unable to set property 'persist.sys.bluetooth.a2dp_offload' from uid:2000 gid:2000 pid:23203: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:system_prop:s0)
+10-22 16:02:13.839 22825 22847 E bluetooth-a2dp: system/stack/avdt/avdt_api.cc:940 AVDT_DisconnectReq: Unable to find AVDT stream endpoint peer:xx:xx:xx:xx:8d:3d
+10-22 16:02:13.839 22825 22847 W bluetooth-a2dp: system/bta/av/bta_av_aact.cc:2448 bta_av_str_closed: peer xx:xx:xx:xx:8d:3d bta_handle:0x41 open_status:0 chnl:64 co_started:0
+10-22 16:02:13.840 22825 22847 W bluetooth: system/profile/avrcp/avrcp_sdp_records.cc:77 RemoveRecord: Trying to remove request id: 0 that doesn't exist
+10-22 16:02:13.840 22825 22847 E bluetooth-a2dp: system/btif/src/btif_av.cc:3237 btif_av_handle_event: Cannot find or create Sink peer for peer=00:00:00:00:00:00  bta_handle=0x41 : event dropped: BTA_AV_CLOSE_EVT(0x3)
+10-22 16:02:13.841  1846  2489 E AS.BtHelper: getCodec, null A2DP codec status for device: XX:XX:XX:XX:8D:3D
+10-22 16:02:13.858 22825 22847 W bluetooth: system/stack/avct/avct_lcb.cc:406 avct_lcb_last_ccb: avct_lcb_last_ccb
+10-22 16:02:13.858 22825 22847 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:0 allocated:1, 
+10-22 16:02:13.858 22825 22847 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:1 allocated:3, 
+10-22 16:02:13.858 22825 22847 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:2 allocated:0, 
+10-22 16:02:13.858 22825 22847 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:3 allocated:0, 
+10-22 16:02:13.858 22825 22847 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:4 allocated:0, 
+10-22 16:02:13.858 22825 22847 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:5 allocated:0, 
+10-22 16:02:13.858 22825 22847 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:6 allocated:0, 
+10-22 16:02:13.858 22825 22847 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:7 allocated:0, 
+10-22 16:02:13.858 22825 22847 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:8 allocated:0, 
+10-22 16:02:13.858 22825 22847 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:9 allocated:0, 
+10-22 16:02:13.858 22825 22847 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:10 allocated:0, 
+10-22 16:02:13.858 22825 22847 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:11 allocated:0, 
+10-22 16:02:13.858 22825 22847 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:12 allocated:0, 
+10-22 16:02:13.858 22825 22847 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:13 allocated:0, 
+10-22 16:02:13.860 22825 22841 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:02:13.862 22825 22847 W bluetooth: system/bta/ag/bta_ag_sco.cc:1259 bta_ag_sco_event: SCO_state_change: [BTA_AG_SCO_LISTEN_ST(0x01)]->[BTA_AG_SCO_SHUTDOWN_ST(0x00)] after event [BTA_AG_SCO_SHUTDOWN_E(0x06)]
+10-22 16:02:13.862 22825 22841 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:02:13.863 22825 22841 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:02:13.864 22825 22841 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:02:13.865 22825 22841 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:02:13.868 22825 22841 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:02:13.868 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:02:13.868 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:02:13.870 22825 22841 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:02:13.871 22825 22825 W BluetoothHidHostServiceJni: android/app/jni/com_android_bluetooth_hid_host.cpp:225 cleanupNative: Cleaning up Bluetooth HID Interface...
+10-22 16:02:13.871 22825 22841 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:02:13.871 22825 22825 W BluetoothHidHostServiceJni: android/app/jni/com_android_bluetooth_hid_host.cpp:231 cleanupNative: Cleaning up Bluetooth GID callback object
+10-22 16:02:13.872 22825 22872 W BluetoothMetrics: system/metrics/src/android/metrics.cc:105 LogBluetoothEvent: Failed BluetoothEvent Upload - Address is Empty
+10-22 16:02:13.873 22825 22841 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:02:13.874 14913 20225 W NearbyMediums: [BLUETOOTH_RADIO] State was changed outside of our control. Updating the snapshot to match current radio state.
+10-22 16:02:13.875 22825 22841 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:02:13.876 22825 22841 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:02:13.876 22825 22841 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:02:13.877 22825 22841 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:02:13.877 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:02:13.877 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:02:13.878 22825 22872 W BluetoothMetrics: system/metrics/src/android/metrics.cc:105 LogBluetoothEvent: Failed BluetoothEvent Upload - Address is Empty
+10-22 16:02:13.880 22825 22841 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:02:13.885 22825 22847 W bluetooth: system/stack/rfcomm/rfc_port_fsm.cc:581 rfc_port_sm_disc_wait_ua: RFC_EVENT_DM|RFC_EVENT_UA[1], port_handle:22
+10-22 16:02:13.885 22825 22865 E bt_btif_hf: system/btif/src/btif_hf.cc:365 btif_hf_upstreams_evt: BTA_AG_CLOSE_EVT(0x3) Headset callback is not set
+10-22 16:02:13.888 22825 22825 W BluetoothPanServiceJni: android/app/jni/com_android_bluetooth_pan.cpp:135 cleanupNative: Cleaning up Bluetooth PAN Interface...
+10-22 16:02:13.888 22825 22825 W BluetoothPanServiceJni: android/app/jni/com_android_bluetooth_pan.cpp:141 cleanupNative: Cleaning up Bluetooth PAN callback object
+10-22 16:02:13.888 22825 22872 W BluetoothMetrics: system/metrics/src/android/metrics.cc:105 LogBluetoothEvent: Failed BluetoothEvent Upload - Address is Empty
+10-22 16:02:13.892 22825 22872 W BluetoothMetrics: system/metrics/src/android/metrics.cc:105 LogBluetoothEvent: Failed BluetoothEvent Upload - Address is Empty
+10-22 16:02:13.893 22825 22825 W AvrcpTargetJni: android/app/jni/com_android_bluetooth_avrcp_target.cpp:291 sendMediaUpdateNative: Service not loaded.
+10-22 16:02:13.893 22825 22852 E bluetooth: system/main/shim/acl.cc:1051 check_for_orphaned_acl_connections: Orphaned classic ACL handle:0x0003 bd_addr:xx:xx:xx:xx:8d:3d created:2026-10-22 16:01:58.839
+10-22 16:02:13.894 22825 22847 W bluetooth: system/main/shim/acl.cc:1514 DisconnectAllForSuspend: Disconnected open ACL connections
+10-22 16:02:13.896 22825 22847 W bluetooth: system/bta/gatt/bta_gatts.cc:101 BTA_GATTS_Disable: GATTS Module not enabled/already disabled
+10-22 16:02:13.897  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:------------onServiceDisconnected--------
+10-22 16:02:13.900 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. Bluetooth A2dp is null.
+10-22 16:02:13.900 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:02:13.901  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:------------onServiceDisconnected--------
+10-22 16:02:13.902 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. Bluetooth A2dp is null.
+10-22 16:02:13.902 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:02:13.903  2598  2673 W BluetoothHeadset: Proxy not attached to service
+10-22 16:02:13.903  2598  2673 W BluetoothA2dp: Proxy not attached to service
+10-22 16:02:13.903  2598  2673 W BluetoothHeadset: Proxy not attached to service
+10-22 16:02:13.904  2598  2673 W BluetoothA2dp: Proxy not attached to service
+10-22 16:02:13.904  2598  2663 W BluetoothHeadset: Proxy not attached to service
+10-22 16:02:13.904  2598  2663 W BluetoothA2dp: Proxy not attached to service
+10-22 16:02:13.923 14913 18960 W NearbyMediums: [BLUETOOTH_RADIO] State was changed outside of our control. Updating the snapshot to match current radio state.
+10-22 16:02:13.925 14913 21771 W BluetoothLeScanner: stopScan(callback): BLE is not available
+10-22 16:02:13.932  1846  2489 W BluetoothHeadset: Proxy not attached to service
+10-22 16:02:13.955  1846  2489 W BluetoothHeadset: Proxy not attached to service
+10-22 16:02:13.979 22825 22852 W BluetoothMetrics: system/metrics/src/android/metrics.cc:105 LogBluetoothEvent: Failed BluetoothEvent Upload - Address is Empty
+10-22 16:02:13.985  2598  2684 W BluetoothHeadset: Proxy not attached to service
+10-22 16:02:13.985  2598  2684 W BluetoothA2dp: Proxy not attached to service
+10-22 16:02:13.986  2598  2684 W BluetoothHeadset: Proxy not attached to service
+10-22 16:02:13.986  2598  2684 W BluetoothA2dp: Proxy not attached to service
+10-22 16:02:13.988  2598  2663 W BluetoothHeadset: Proxy not attached to service
+10-22 16:02:13.988  2598  2663 W BluetoothA2dp: Proxy not attached to service
+10-22 16:02:14.092 22825 22825 W BluetoothSdpJni: android/app/jni/com_android_bluetooth_sdp.cpp:483 cleanupNative: Cleaning up Bluetooth SDP Interface...
+10-22 16:02:14.093 22825 22825 W BluetoothSdpJni: android/app/jni/com_android_bluetooth_sdp.cpp:489 cleanupNative: Cleaning up Bluetooth SDP object
+10-22 16:02:14.103 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.103 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.103 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.103 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.103 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.103 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.103 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.103 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.103 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.103 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.103 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.103 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.103 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.103 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.103 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.103 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104 22825 22825 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:02:14.104  1198  1198 W vendor.qti.bluetooth@1.0-bluetooth_hci: BluetoothHci::close()
+10-22 16:02:14.104  1198  1198 W vendor.qti.bluetooth@1.0-data_handler: DataHandler::CleanUp()
+10-22 16:02:14.109  1198 22860 W vendor.qti.bluetooth@1.0-data_handler: OnPacketReady: Received event for command sent internally: 03 0c 
+10-22 16:02:14.109  1198 22860 W vendor.qti.bluetooth@1.0-data_handler: OnPacketReady: Received event for command sent internally: 08 fc 
+10-22 16:02:14.190  1198 22860 E vendor.qti.bluetooth@1.0-async_fd_watcher: ThreadRoutine: End of AsyncFdWatcher::ThreadRoutine
+10-22 16:02:14.190  1198  1198 W vendor.qti.bluetooth@1.0-async_fd_watcher: StopThread: stopped the work thread
+10-22 16:02:14.332  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:recv action : ACTION_STATE_CHANGED, state : 10
+10-22 16:02:14.333  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothDiscovery:-stopBleScan- >>>>>> stopScan
+10-22 16:02:14.333  5464  5464 E DebugConfig: level:5M8AIVS:M8BluetoothDiscovery:stopBleScan: is NOT scanning now.
+10-22 16:02:14.336  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 0
+10-22 16:02:14.336  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='null; 48:73:CB:D2:8D:3D Device Edr ='null; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 0
+10-22 16:02:14.336  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothBle:-isBleConnecting- mConnectingBleDevice : null
+10-22 16:02:14.336  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothSpp:-isSppConnecting- mConnectingSppDevice : null
+10-22 16:02:14.336  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:Current connecting edr device:null
+10-22 16:02:14.336  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:-notifyEdrConnectStatus- deviceInfo : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='null; 48:73:CB:D2:8D:3D Device Edr ='null; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:02:14.336  5464  5464 E DebugConfig: , status : 0, isConnecting : false, mCurrentConnectingEdrDevice : null, isRequestUuid : false, deviceA2dpStatus : 0 ,deviceHfpStatus : 0
+10-22 16:02:14.337  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:recv action : ACTION_STATE_CHANGED, state : 10
+10-22 16:02:14.338  5464  5464 E DebugConfig: level:5M8AIVS:M8BluetoothBase:onReceive: ACTION_ACL_DISCONNECTED, device:null type:0
+10-22 16:02:14.339  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothDiscovery:-stopBleScan- >>>>>> stopScan
+10-22 16:02:14.339  5464  5464 E DebugConfig: level:5M8AIVS:M8BluetoothDiscovery:stopBleScan: is NOT scanning now.
+10-22 16:02:14.339  1198 22855 E vendor.qti.bluetooth@1.0-wake_lock: Release wake lock not initialized/acquired
+10-22 16:02:14.403  1198  1198 W vendor.qti.bluetooth@1.0-data_handler: controller Cleanup done
+10-22 16:02:14.403  1198  1198 W vendor.qti.bluetooth@1.0-bluetooth_hci: BluetoothHci::close, finish cleanup
+10-22 16:02:15.533 23275 23275 W droid.bluetooth: AIBinder_linkToDeath is being called with a non-null cookie and no onUnlink callback set. Use AIBinder_DeathRecipient_setOnUnlinked to manage the lifetime of the cookie. This will become an abort.
+10-22 16:02:15.535 23275 23275 W bluetooth: system/gd/hal/hci_backend_aidl.cc:159 CreateAidl: Bluetooth AIDL HAL service not declared
+10-22 16:02:15.538  1198  1198 W vendor.qti.bluetooth@1.0-bluetooth_hci: BluetoothHci::initialize()
+10-22 16:02:15.538  1198  1198 W vendor.qti.bluetooth@1.0-data_handler: DataHandler:: Init()
+10-22 16:02:15.538  1198  1198 W vendor.qti.bluetooth@1.0-data_handler: SOC property  set to hastings
+10-22 16:02:15.540  1198 23308 E vendor.qti.bluetooth@1.0-async_fd_watcher: ThreadRoutine unable to set SCHED_FIFO for pid 1198, tid 23308, error Operation not permitted
+10-22 16:02:15.540  1198 23304 E vendor.qti.bluetooth@1.0-power_manager: 
+10-22 16:02:15.540  1198 23304 E vendor.qti.bluetooth@1.0-power_manager: PowerUpChip enable(1) retentionMode(1)
+10-22 16:02:15.551  1198 23308 W vendor.qti.bluetooth@1.0-data_handler: OnPacketReady: Received event for command sent internally: 03 0c 
+10-22 16:02:15.551  1198 23304 E vendor.qti.bluetooth@1.0-bluetooth_address: CMD result: 1
+10-22 16:02:15.553  1198 23308 W vendor.qti.bluetooth@1.0-data_handler: OnPacketReady: Received event for command sent internally: 14 fc 
+10-22 16:02:15.591 23275 23300 W bluetooth: system/gd/hci/le_scanning_manager_impl.cc:1664 on_apcf_read_extended_features_complete: Can not get valid LeAdvFilterCompleteView, return
+10-22 16:02:15.593 23275 23275 E bluetooth: system/gd/hal/socket_hal_impl_android.cc:98 SocketHalImpl: Socket service is not declared (checked for android.hardware.bluetooth.socket.IBluetoothSocket/lpp and android.hardware.bluetooth.socket.IBluetoothSocket/default)
+10-22 16:02:15.594 23275 23275 E bluetooth: system/gd/hal/gatt_hal_impl_android.cc:107 GattHalImpl: The service android.hardware.bluetooth.gatt.IBluetoothGatt/default is not declared
+10-22 16:02:15.630 23275 23275 W bluetooth: system/stack/gatt/gatt_main.cc:106 gatt_init: error initializing gatt offload
+10-22 16:02:15.630 23275 23275 W bluetooth: system/stack/btm/btm_inq.cc:1013 btm_clr_inq_result_flt: Memory being reset multiple times
+10-22 16:02:15.642 23275 23295 W bt_btif_sock_hal: system/btif/src/btif_sock_hal.cc:67 btsock_hal_init: RegisterSocketHalCallback() failed!
+10-22 16:02:15.642 23275 23295 W bt_btif_sock: system/btif/src/btif_sock.cc:118 btif_sock_init: error initializing socket hal: FAIL
+10-22 16:02:15.650  2598  2673 W BluetoothHeadset: Proxy not attached to service
+10-22 16:02:15.650  2598  2673 W BluetoothA2dp: Proxy not attached to service
+10-22 16:02:15.650  2598  2673 W BluetoothHeadset: Proxy not attached to service
+10-22 16:02:15.650  2598  2673 W BluetoothA2dp: Proxy not attached to service
+10-22 16:02:15.651  2598  2663 W BluetoothHeadset: Proxy not attached to service
+10-22 16:02:15.651  2598  2663 W BluetoothA2dp: Proxy not attached to service
+10-22 16:02:15.651 23275 23275 E BluetoothPhonePolicy: shouldEnableHapByDefault: No HapClientService
+10-22 16:02:15.651 23275 23275 W BluetoothAdapterService: deviceUuidsUpdated: Not broadcasting ACTION_UUID in adapter state: BLE_TURNING_ON
+10-22 16:02:15.664  2598  2675 W BluetoothHeadset: Proxy not attached to service
+10-22 16:02:15.664  2598  2675 W BluetoothA2dp: Proxy not attached to service
+10-22 16:02:15.664  2598  2675 W BluetoothHeadset: Proxy not attached to service
+10-22 16:02:15.664  2598  2675 W BluetoothA2dp: Proxy not attached to service
+10-22 16:02:15.665  2598  2663 W BluetoothHeadset: Proxy not attached to service
+10-22 16:02:15.665  2598  2663 W BluetoothA2dp: Proxy not attached to service
+10-22 16:02:15.666 23275 23295 W droid.bluetooth: AIBinder_linkToDeath is being called with a non-null cookie and no onUnlink callback set. Use AIBinder_DeathRecipient_setOnUnlinked to manage the lifetime of the cookie. This will become an abort.
+10-22 16:02:15.667 23275 23295 W droid.bluetooth: AIBinder_linkToDeath is being called with a non-null cookie and no onUnlink callback set. Use AIBinder_DeathRecipient_setOnUnlinked to manage the lifetime of the cookie. This will become an abort.
+10-22 16:02:15.687 23275 23275 E BluetoothHeadsetServiceJni: android/app/jni/com_android_bluetooth_hfp.cpp:785 enableSwbNative: Failed to disable
+10-22 16:02:15.693 23275 23295 W droid.bluetooth: AIBinder_linkToDeath is being called with a non-null cookie and no onUnlink callback set. Use AIBinder_DeathRecipient_setOnUnlinked to manage the lifetime of the cookie. This will become an abort.
+10-22 16:02:15.712 23275 23275 E BluetoothPhonePolicy: shouldEnableHapByDefault: No HapClientService
+10-22 16:02:15.713 23275 23275 W BluetoothAdapterService: deviceUuidsUpdated: Not broadcasting ACTION_UUID in adapter state: TURNING_ON
+10-22 16:02:15.721  1846  2523 E Binder  : 	at android.bluetooth.IBluetooth$Stub$Proxy.getBondedDevices(IBluetooth.java:2622)
+10-22 16:02:15.721  1846  2523 E Binder  : 	at android.bluetooth.BluetoothAdapter.lambda$getBondedDevices$30(BluetoothAdapter.java:2433)
+10-22 16:02:15.721  1846  2523 E Binder  : 	at android.bluetooth.BluetoothAdapter.$r8$lambda$qxPPj5VyD_iKGm7Xoh82AFf0KWk(BluetoothAdapter.java:0)
+10-22 16:02:15.721  1846  2523 E Binder  : 	at android.bluetooth.BluetoothAdapter$$ExternalSyntheticLambda45.applyOrThrow(D8$$SyntheticClass:0)
+10-22 16:02:15.721  1846  2523 E Binder  : 	at android.bluetooth.BluetoothUtils$RemoteExceptionIgnoringFunction.apply(BluetoothUtils.java:411)
+10-22 16:02:15.721  1846  2523 E Binder  : 	at android.bluetooth.BluetoothAdapter.callServiceIfEnabled(BluetoothAdapter.java:1041)
+10-22 16:02:15.721  1846  2523 E Binder  : 	at android.bluetooth.BluetoothAdapter.getBondedDevices(BluetoothAdapter.java:2430)
+10-22 16:02:15.721  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.updateBluetoothRoutesLockingOnlyInternalState(BluetoothDeviceRoutesManager.java:341)
+10-22 16:02:15.721  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.updateBluetoothRoutes(BluetoothDeviceRoutesManager.java:327)
+10-22 16:02:15.721  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.handleBluetoothAdapterStateChange(BluetoothDeviceRoutesManager.java:628)
+10-22 16:02:15.721  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.-$$Nest$mhandleBluetoothAdapterStateChange(BluetoothDeviceRoutesManager.java:0)
+10-22 16:02:15.721  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$AdapterStateChangedReceiver.lambda$onReceive$0(BluetoothDeviceRoutesManager.java:651)
+10-22 16:02:15.721  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$AdapterStateChangedReceiver.$r8$lambda$Y-94Ecaq9Hg_LeQVGeIkV-Bn8iw(BluetoothDeviceRoutesManager.java:0)
+10-22 16:02:15.721  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$AdapterStateChangedReceiver$$ExternalSyntheticLambda0.run(R8$$SyntheticClass:0)
+10-22 16:02:15.730  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:------------onServiceConnected--------profile=1
+10-22 16:02:15.732  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:------------onServiceConnected--------profile=2
+10-22 16:02:15.759 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:02:15.759 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:02:15.759 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:02:15.769 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:02:15.769 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:02:15.770 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:02:15.771 14913 20225 W NearbyMediums: [BLUETOOTH_RADIO] State was changed outside of our control. Updating the snapshot to match current radio state.
+10-22 16:02:16.161  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:recv action : ACTION_STATE_CHANGED, state : 12
+10-22 16:02:16.165  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:recv action : ACTION_STATE_CHANGED, state : 12
+10-22 16:02:16.166  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: hfp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 1
+10-22 16:02:16.169  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:==========onHfpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 1
+10-22 16:02:16.682 23275 23295 W bluetooth: system/bta/ag/bta_ag_sco.cc:447 bta_ag_create_sco: device xx:xx:xx:xx:8d:3d is not active, active_device=00:00:00:00:00:00
+10-22 16:02:16.682 23275 23295 W bluetooth: system/bta/ag/bta_ag_sco.cc:1259 bta_ag_sco_event: SCO_state_change: [BTA_AG_SCO_SHUTDOWN_ST(0x00)]->[BTA_AG_SCO_LISTEN_ST(0x01)] after event [BTA_AG_SCO_LISTEN_E(0x00)]
+10-22 16:02:16.717  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: ACTION_ACL_CONNECTED,  device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:02:16.966 23365 23365 W cmd     : Can't find service bluetooth
+10-22 16:02:17.022 23275 23275 W BluetoothRemoteDevices: Invalid parameters device=false, batteryLevel=-1
+10-22 16:02:17.598  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: hfp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 2
+10-22 16:02:17.602  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:==========onHfpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 2
+10-22 16:02:20.009 23371 23371 W getprop : type=1400 audit(0.0:2843): avc:  denied  { read } for  name="u:object_r:bluetooth_a2dp_offload_prop:s0" dev="tmpfs" ino=3166 scontext=u:r:shell:s0 tcontext=u:object_r:bluetooth_a2dp_offload_prop:s0 tclass=file permissive=0
+10-22 16:02:20.013 23371 23371 W libc    : Access denied finding property "persist.bluetooth.a2dp_offload.disabled"
+10-22 16:02:21.256 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:02:21.256 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:02:21.256 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:02:21.256 23275 23295 W bluetooth-a2dp: system/bta/av/bta_av_main.cc:970 bta_av_link_role_ok: Unable to find link role for device:00:00:00:00:00:00
+10-22 16:02:21.257 23275 23355 W Binder  : java.lang.SecurityException: Neither user 10233 nor current process has android.permission.BLUETOOTH_PRIVILEGED.
+10-22 16:02:21.257 23275 23355 W Binder  : 	at com.android.bluetooth.a2dp.A2dpServiceBinder.setOptionalCodecsEnabled(A2dpServiceBinder.java:315)
+10-22 16:02:21.257 23275 23355 W Binder  : 	at android.bluetooth.IBluetoothA2dp$Stub.onTransact(IBluetoothA2dp.java:456)
+10-22 16:02:21.258 23275 23362 W Binder  : java.lang.SecurityException: Neither user 10233 nor current process has android.permission.BLUETOOTH_PRIVILEGED.
+10-22 16:02:21.258 23275 23362 W Binder  : 	at com.android.bluetooth.a2dp.A2dpServiceBinder.disableOptionalCodecs(A2dpServiceBinder.java:275)
+10-22 16:02:21.258 23275 23362 W Binder  : 	at android.bluetooth.IBluetoothA2dp$Stub.onTransact(IBluetoothA2dp.java:420)
+10-22 16:02:21.260 23275 23362 W Binder  : java.lang.SecurityException: The application with package name com.aistudio.redmibudsfixer.rbaf does not have a CDM association with the Bluetooth Device
+10-22 16:02:21.260 23275 23362 W Binder  : 	at com.android.bluetooth.Utils.enforceCdmAssociation(Utils.java:269)
+10-22 16:02:21.260 23275 23362 W Binder  : 	at com.android.bluetooth.Utils.enforceCdmAssociationIfNotBluetoothPrivileged(Utils.java:282)
+10-22 16:02:21.260 23275 23362 W Binder  : 	at com.android.bluetooth.a2dp.A2dpServiceBinder.setCodecConfigPreference(A2dpServiceBinder.java:248)
+10-22 16:02:21.260 23275 23362 W Binder  : 	at android.bluetooth.IBluetoothA2dp$Stub.onTransact(IBluetoothA2dp.java:400)
+10-22 16:02:21.267 23275 23275 E A2dpStateMachine: Incorrect event: 1
+10-22 16:02:21.276  1846  2523 E Binder  : 	at android.bluetooth.IBluetoothHearingAid$Stub$Proxy.getConnectedDevices(IBluetoothHearingAid.java:419)
+10-22 16:02:21.276  1846  2523 E Binder  : 	at android.bluetooth.BluetoothHearingAid.getConnectedDevices(BluetoothHearingAid.java:390)
+10-22 16:02:21.276  1846  2523 E Binder  : 	at com.android.server.media.BluetoothProfileMonitor.isProfileSupported(BluetoothProfileMonitor.java:165)
+10-22 16:02:21.276  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.getDeviceType(BluetoothDeviceRoutesManager.java:599)
+10-22 16:02:21.276  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.createBluetoothRoute(BluetoothDeviceRoutesManager.java:543)
+10-22 16:02:21.276  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.updateBluetoothRoutesLockingOnlyInternalState(BluetoothDeviceRoutesManager.java:348)
+10-22 16:02:21.276  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.updateBluetoothRoutes(BluetoothDeviceRoutesManager.java:327)
+10-22 16:02:21.276  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.-$$Nest$mupdateBluetoothRoutes(BluetoothDeviceRoutesManager.java:0)
+10-22 16:02:21.276  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$DeviceStateChangedReceiver.lambda$onReceive$0(BluetoothDeviceRoutesManager.java:665)
+10-22 16:02:21.276  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$DeviceStateChangedReceiver.$r8$lambda$YnNdjO8jUafYW9nGc-fEBOr8Jm4(BluetoothDeviceRoutesManager.java:0)
+10-22 16:02:21.276  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$DeviceStateChangedReceiver$$ExternalSyntheticLambda0.run(R8$$SyntheticClass:0)
+10-22 16:02:21.278  1846  2523 E Binder  : 	at android.bluetooth.IBluetoothA2dp$Stub$Proxy.getConnectedDevices(IBluetoothA2dp.java:561)
+10-22 16:02:21.278  1846  2523 E Binder  : 	at android.bluetooth.BluetoothA2dp.getConnectedDevices(BluetoothA2dp.java:394)
+10-22 16:02:21.278  1846  2523 E Binder  : 	at com.android.server.media.BluetoothProfileMonitor.isProfileSupported(BluetoothProfileMonitor.java:165)
+10-22 16:02:21.278  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.getConnectedProfiles(BluetoothDeviceRoutesManager.java:581)
+10-22 16:02:21.278  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.createBluetoothRoute(BluetoothDeviceRoutesManager.java:546)
+10-22 16:02:21.278  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.updateBluetoothRoutesLockingOnlyInternalState(BluetoothDeviceRoutesManager.java:348)
+10-22 16:02:21.278  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.updateBluetoothRoutes(BluetoothDeviceRoutesManager.java:327)
+10-22 16:02:21.278  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.-$$Nest$mupdateBluetoothRoutes(BluetoothDeviceRoutesManager.java:0)
+10-22 16:02:21.278  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$DeviceStateChangedReceiver.lambda$onReceive$0(BluetoothDeviceRoutesManager.java:665)
+10-22 16:02:21.278  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$DeviceStateChangedReceiver.$r8$lambda$YnNdjO8jUafYW9nGc-fEBOr8Jm4(BluetoothDeviceRoutesManager.java:0)
+10-22 16:02:21.278  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$DeviceStateChangedReceiver$$ExternalSyntheticLambda0.run(R8$$SyntheticClass:0)
+10-22 16:02:21.326 23275 23295 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:109 a2dp_sdp_cback: ATTR_ID_SERVICE_NAME attr not found!!
+10-22 16:02:21.326 23275 23295 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:122 a2dp_sdp_cback: ATTR_ID_PROVIDER_NAME attr not found!!
+10-22 16:02:21.326 23275 23295 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:135 a2dp_sdp_cback: ATTR_ID_SUPPORTED_FEATURES attr not found!!
+10-22 16:02:21.469 23275 23295 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:02:21.481 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:02:21.481 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:02:21.488 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:02:21.488 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:02:21.520 23275 23275 E A2dpStateMachine: Connecting: ignoring event: AUDIO_DELAY_REPORTED
+10-22 16:02:21.520 23275 23275 E A2dpStateMachine:  - unhandledMessage: msg.what=104
+10-22 16:02:21.584 23275 23295 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:02:21.584 23275 23295 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:02:21.603 23275 23295 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:02:21.606 23275 23295 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:02:21.621 31630 31630 E BaseBluetoothDlgPref: Unable to get summary of 31777. Size is 4
+10-22 16:02:21.636  1369 27968 E APM::HwModule: createDevice: could not find HW module for device type 'AUDIO_DEVICE_OUT_BLUETOOTH_A2DP' (00000080), encoded format 'AUDIO_FORMAT_LHDC'
+10-22 16:02:21.637 23275 23331 E BluetoothActiveDeviceManager: setLeAudioActiveDevice: Le Audio service not available
+10-22 16:02:21.639  1846  2489 E AS.AudioDeviceInventory: APM failed to make available A2DP device addr=XX:XX:XX:XX:8D:3D error=1
+10-22 16:02:21.652 31630 31630 E BaseBluetoothDlgPref: Unable to get summary of 31777. Size is 4
+10-22 16:02:21.674  1195 23438 E audio_hw_primary: offload_thread_loop: Compress handle is NULL
+10-22 16:02:21.741  1846  2489 E Binder  : 	at android.bluetooth.IBluetoothHeadset$Stub$Proxy.getAudioState(IBluetoothHeadset.java:802)
+10-22 16:02:21.741  1846  2489 E Binder  : 	at android.bluetooth.BluetoothHeadset.getAudioState(BluetoothHeadset.java:823)
+10-22 16:02:21.741  1846  2489 E Binder  : 	at com.android.server.audio.BtHelper$LegacyScoHelper.stopBluetoothSco(BtHelper.java:386)
+10-22 16:02:21.741  1846  2489 E Binder  : 	at com.android.server.audio.BtHelper.stopBluetoothSco(BtHelper.java:763)
+10-22 16:02:21.760  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 1
+10-22 16:02:21.762  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 1
+10-22 16:02:21.764  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothBle:-isBleConnecting- mConnectingBleDevice : null
+10-22 16:02:21.764  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothSpp:-isSppConnecting- mConnectingSppDevice : null
+10-22 16:02:21.764  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:Current connecting edr device:null
+10-22 16:02:21.764  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:-notifyEdrConnectStatus- deviceInfo : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:02:21.764  5464  5464 E DebugConfig: , status : 1, isConnecting : false, mCurrentConnectingEdrDevice : null, isRequestUuid : false, deviceA2dpStatus : 1 ,deviceHfpStatus : 2
+10-22 16:02:21.765  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 2
+10-22 16:02:21.766  5464  5464 E DebugConfig: level:5M8AIVS:M8BluetoothBase:onReceive: ACTION_PLAYING_STATE_CHANGED, device:Redmi Buds 5 Pro state:11
+10-22 16:02:21.767  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 2
+10-22 16:02:21.769  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothBle:-isBleConnecting- mConnectingBleDevice : null
+10-22 16:02:21.769  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothSpp:-isSppConnecting- mConnectingSppDevice : null
+10-22 16:02:21.769  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:Current connecting edr device:null
+10-22 16:02:21.769  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:-notifyEdrConnectStatus- deviceInfo : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:02:21.769  5464  5464 E DebugConfig: , status : 2, isConnecting : false, mCurrentConnectingEdrDevice : null, isRequestUuid : false, deviceA2dpStatus : 2 ,deviceHfpStatus : 2
+10-22 16:02:21.784 14913 14919 W NearbyShared: mpz: The completer object was garbage collected - this future would otherwise never complete. The tag was: BluetoothDeviceConnectionStateManager:tryReconnectProxy
+10-22 16:02:21.970  1195 31405 W audio_hw_utils: audio_extn_utils_update_stream_input_app_type_cfg: App type could not be selected. Falling back to default
+10-22 16:02:22.836 21665 21945 W MediaRouter2Helper: No Bluetooth A2DP route found in MediaRouter2
+10-22 16:02:23.474 23275 23295 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:109 a2dp_sdp_cback: ATTR_ID_SERVICE_NAME attr not found!!
+10-22 16:02:23.474 23275 23295 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:122 a2dp_sdp_cback: ATTR_ID_PROVIDER_NAME attr not found!!
+10-22 16:02:23.474 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:2566 ProcessEvent: Peer xx:xx:xx:xx:8d:3d : Unhandled event=BTIF_AV_AVRCP_OPEN_EVT(0x22)
+10-22 16:02:25.080 23275 23295 W bluetooth-a2dp: system/bta/av/bta_av_aact.cc:2964 bta_av_open_rc: Using the new AVRCP Profile
+10-22 16:02:25.243 21665 21945 W AudioRoutingService: playAacStereoTest: No Bluetooth A2DP device found! Aborting to avoid phone speaker output.
+10-22 16:02:41.341  1369  1465 W AudioFlinger: moveEffectChain_ll: effect chain for session 0 not on source thread 0xb4000072b9a6dfe8
+10-22 16:02:42.887 23275 23295 W bluetooth: system/bta/dm/bta_dm_pm.cc:1055 bta_dm_pm_btm_status: Received error when attempting to set sniff subrating mode
+10-22 16:02:44.419 23275 23295 W bluetooth: system/bta/ag/bta_ag_sco.cc:1259 bta_ag_sco_event: SCO_state_change: [BTA_AG_SCO_LISTEN_ST(0x01)]->[BTA_AG_SCO_SHUTDOWN_ST(0x00)] after event [BTA_AG_SCO_SHUTDOWN_E(0x06)]
+10-22 16:02:44.448 23275 23331 E BluetoothActiveDeviceManager: setLeAudioActiveDevice: Le Audio service not available
+10-22 16:02:44.475 23275 23295 W bluetooth-a2dp: system/bta/av/bta_av_aact.cc:2448 bta_av_str_closed: peer xx:xx:xx:xx:8d:3d bta_handle:0x41 open_status:0 chnl:64 co_started:0
+10-22 16:02:44.476 23275 23295 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/a2dp_encoding_aidl.cc:375 ack_stream_suspended: pending=0 ignore result=0
+10-22 16:02:44.477 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:02:44.477 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:02:44.477 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:02:44.531 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:02:44.531 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:02:44.546 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:02:44.546 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:02:44.808 23275 23300 W BluetoothMetrics: system/metrics/src/android/metrics.cc:105 LogBluetoothEvent: Failed BluetoothEvent Upload - Address is Empty
+10-22 16:02:44.809 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:02:44.809 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:02:44.809 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:02:44.809 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:02:44.809 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:02:44.809 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:02:44.809 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:02:44.809 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:02:44.809 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:02:44.924  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: hfp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 3
+10-22 16:02:44.926  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:==========onHfpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 3
+10-22 16:02:44.926  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: hfp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 0
+10-22 16:02:44.926  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 3
+10-22 16:02:44.926  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 0
+10-22 16:02:44.928  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:==========onHfpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 0
+10-22 16:02:44.929  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 3
+10-22 16:02:44.930  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothBle:-isBleConnecting- mConnectingBleDevice : null
+10-22 16:02:44.930  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothSpp:-isSppConnecting- mConnectingSppDevice : null
+10-22 16:02:44.930  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:Current connecting edr device:null
+10-22 16:02:44.930  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:-notifyEdrConnectStatus- deviceInfo : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:02:44.930  5464  5464 E DebugConfig: , status : 3, isConnecting : false, mCurrentConnectingEdrDevice : null, isRequestUuid : false, deviceA2dpStatus : 3 ,deviceHfpStatus : 0
+10-22 16:02:44.931  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 0
+10-22 16:02:44.932  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothBle:-isBleConnecting- mConnectingBleDevice : null
+10-22 16:02:44.932  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothSpp:-isSppConnecting- mConnectingSppDevice : null
+10-22 16:02:44.932  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:Current connecting edr device:null
+10-22 16:02:44.932  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:-notifyEdrConnectStatus- deviceInfo : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:02:44.932  5464  5464 E DebugConfig: , status : 0, isConnecting : false, mCurrentConnectingEdrDevice : null, isRequestUuid : false, deviceA2dpStatus : 0 ,deviceHfpStatus : 0
+10-22 16:02:44.933  5464  5464 E DebugConfig: level:5M8AIVS:M8BluetoothBase:onReceive: ACTION_ACL_DISCONNECTED, device:Redmi Buds 5 Pro type:3
+10-22 16:03:39.190 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:03:39.190 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:03:39.190 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:03:39.351  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: ACTION_ACL_CONNECTED,  device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:03:39.353  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 1
+10-22 16:03:39.353 23275 23295 W bluetooth: system/bta/ag/bta_ag_sco.cc:447 bta_ag_create_sco: device xx:xx:xx:xx:8d:3d is not active, active_device=00:00:00:00:00:00
+10-22 16:03:39.353 23275 23295 W bluetooth: system/bta/ag/bta_ag_sco.cc:1259 bta_ag_sco_event: SCO_state_change: [BTA_AG_SCO_SHUTDOWN_ST(0x00)]->[BTA_AG_SCO_LISTEN_ST(0x01)] after event [BTA_AG_SCO_LISTEN_E(0x00)]
+10-22 16:03:39.356  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 1
+10-22 16:03:39.358  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothBle:-isBleConnecting- mConnectingBleDevice : null
+10-22 16:03:39.358  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothSpp:-isSppConnecting- mConnectingSppDevice : null
+10-22 16:03:39.358  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:Current connecting edr device:null
+10-22 16:03:39.358  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:-notifyEdrConnectStatus- deviceInfo : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:03:39.358  5464  5464 E DebugConfig: , status : 1, isConnecting : false, mCurrentConnectingEdrDevice : null, isRequestUuid : false, deviceA2dpStatus : 1 ,deviceHfpStatus : 0
+10-22 16:03:39.644 23275 23275 W BluetoothRemoteDevices: Invalid parameters device=false, batteryLevel=-1
+10-22 16:03:39.859  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: hfp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 1
+10-22 16:03:39.860  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: hfp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 2
+10-22 16:03:39.864  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:==========onHfpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 1
+10-22 16:03:39.865  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:==========onHfpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 2
+10-22 16:03:40.144 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:4036 btif_av_is_peer_edr: peer=xx:xx:xx:xx:8d:3d not connected
+10-22 16:03:40.147 23275 23295 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:03:40.153 23275 23275 E A2dpStateMachine: Connecting: ignoring event: AUDIO_DELAY_REPORTED
+10-22 16:03:40.153 23275 23275 E A2dpStateMachine:  - unhandledMessage: msg.what=104
+10-22 16:03:40.189 23275 23295 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:03:40.206 23275 23295 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:03:40.208 23275 23295 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:03:40.222 31630 31630 E BaseBluetoothDlgPref: Unable to get summary of 31777. Size is 4
+10-22 16:03:40.228 23275 23331 E BluetoothActiveDeviceManager: setLeAudioActiveDevice: Le Audio service not available
+10-22 16:03:40.230  1369  9466 E APM::HwModule: createDevice: could not find HW module for device type 'AUDIO_DEVICE_OUT_BLUETOOTH_A2DP' (00000080), encoded format 'AUDIO_FORMAT_LHDC'
+10-22 16:03:40.230  1846  2489 E AS.AudioDeviceInventory: APM failed to make available A2DP device addr=XX:XX:XX:XX:8D:3D error=1
+10-22 16:03:40.250 31630 31630 E BaseBluetoothDlgPref: Unable to get summary of 31777. Size is 4
+10-22 16:03:40.273  1195 23497 E audio_hw_primary: offload_thread_loop: Compress handle is NULL
+10-22 16:03:40.303  1195  1281 W audio_hw_utils: audio_extn_utils_update_stream_input_app_type_cfg: App type could not be selected. Falling back to default
+10-22 16:03:40.429 23275 23295 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:109 a2dp_sdp_cback: ATTR_ID_SERVICE_NAME attr not found!!
+10-22 16:03:40.429 23275 23295 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:122 a2dp_sdp_cback: ATTR_ID_PROVIDER_NAME attr not found!!
+10-22 16:03:40.430 23275 23295 W bluetooth-a2dp: system/btif/src/btif_av.cc:2566 ProcessEvent: Peer xx:xx:xx:xx:8d:3d : Unhandled event=BTIF_AV_AVRCP_OPEN_EVT(0x22)
+10-22 16:03:40.695  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 2
+10-22 16:03:40.699  5464  5464 E DebugConfig: level:5M8AIVS:M8BluetoothBase:onReceive: ACTION_PLAYING_STATE_CHANGED, device:Redmi Buds 5 Pro state:11
+10-22 16:03:40.700  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 2
+10-22 16:03:40.702  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothBle:-isBleConnecting- mConnectingBleDevice : null
+10-22 16:03:40.702  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothSpp:-isSppConnecting- mConnectingSppDevice : null
+10-22 16:03:40.702  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:Current connecting edr device:null
+10-22 16:03:40.702  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:-notifyEdrConnectStatus- deviceInfo : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:03:40.702  5464  5464 E DebugConfig: , status : 2, isConnecting : false, mCurrentConnectingEdrDevice : null, isRequestUuid : false, deviceA2dpStatus : 2 ,deviceHfpStatus : 2
+10-22 16:03:43.389  1369 19924 W AudioFlinger: moveEffectChain_ll: effect chain for session 0 not on source thread 0xb4000072bc0abfe8
+10-22 16:03:43.437  1195  8257 E audio_hw_utils: send_app_type_cfg_for_device: Could not get ctl for mixer cmd - Audio Stream Capture 32 App Type Cfg
+10-22 16:03:43.644 23275 23295 W bluetooth-a2dp: system/bta/av/bta_av_aact.cc:2964 bta_av_open_rc: Using the new AVRCP Profile
+10-22 16:03:49.220 23275 23295 W bluetooth: system/bta/dm/bta_dm_pm.cc:1055 bta_dm_pm_btm_status: Received error when attempting to set sniff subrating mode
+10-22 16:03:53.097     1     1 W /system/bin/init: type=1107 audit(0.0:2844): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.bluetooth.leaudio_offload.disabled pid=23540 uid=2000 gid=2000 scontext=u:r:shell:s0 tcontext=u:object_r:bluetooth_a2dp_offload_prop:s0 tclass=property_service permissive=0'
+10-22 16:03:52.347     0     0 E init    : Unable to set property 'persist.bluetooth.leaudio_offload.disabled' from uid:2000 gid:2000 pid:23540: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 16:03:53.104 23540 23540 W libc    : Unable to set property "persist.bluetooth.leaudio_offload.disabled" to "true": PROP_ERROR_PERMISSION_DENIED (0x18)
+10-22 16:03:53.137     1     1 W /system/bin/init: type=1107 audit(0.0:2845): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=bluetooth.profile.le_audio.enabled pid=23543 uid=2000 gid=2000 scontext=u:r:shell:s0 tcontext=u:object_r:bluetooth_prop:s0 tclass=property_service permissive=0'
+10-22 16:03:53.141 23543 23543 W libc    : Unable to set property "bluetooth.profile.le_audio.enabled" to "false": PROP_ERROR_PERMISSION_DENIED (0x18)
+10-22 16:03:52.384     0     0 E init    : Unable to set property 'bluetooth.profile.le_audio.enabled' from uid:2000 gid:2000 pid:23543: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_prop:s0)
+10-22 16:03:53.221 23553 23553 W getprop : type=1400 audit(0.0:2846): avc:  denied  { read } for  name="u:object_r:bluetooth_prop:s0" dev="tmpfs" ino=3171 scontext=u:r:shell:s0 tcontext=u:object_r:bluetooth_prop:s0 tclass=file permissive=0
+10-22 16:03:53.226 23553 23553 W libc    : Access denied finding property "bluetooth.profile.le_audio.enabled"
+10-22 16:03:53.917     1     1 W /system/bin/init: type=1107 audit(0.0:2847): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.bluetooth.a2dp_offload.disabled pid=23571 uid=2000 gid=2000 scontext=u:r:shell:s0 tcontext=u:object_r:bluetooth_a2dp_offload_prop:s0 tclass=property_service permissive=0'
+10-22 16:03:53.920 23571 23571 W libc    : Unable to set property "persist.bluetooth.a2dp_offload.disabled" to "true": PROP_ERROR_PERMISSION_DENIED (0x18)
+10-22 16:03:53.163     0     0 E init    : Unable to set property 'persist.bluetooth.a2dp_offload.disabled' from uid:2000 gid:2000 pid:23571: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:bluetooth_a2dp_offload_prop:s0)
+10-22 16:03:53.929     1     1 W /system/bin/init: type=1107 audit(0.0:2848): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.sys.bluetooth.a2dp_offload pid=23575 uid=2000 gid=2000 scontext=u:r:shell:s0 tcontext=u:object_r:system_prop:s0 tclass=property_service permissive=0'
+10-22 16:03:53.933 23575 23575 W libc    : Unable to set property "persist.sys.bluetooth.a2dp_offload" to "false": PROP_ERROR_PERMISSION_DENIED (0x18)
+10-22 16:03:53.177     0     0 E init    : Unable to set property 'persist.sys.bluetooth.a2dp_offload' from uid:2000 gid:2000 pid:23575: SELinux permission check failed (source_context=u:r:shell:s0, target_context=u:object_r:system_prop:s0)
+10-22 16:03:54.127  1846  2489 E AS.BtHelper: getCodec, null A2DP codec status for device: XX:XX:XX:XX:8D:3D
+10-22 16:03:54.128 23275 23295 E bluetooth-a2dp: system/stack/avdt/avdt_api.cc:940 AVDT_DisconnectReq: Unable to find AVDT stream endpoint peer:xx:xx:xx:xx:8d:3d
+10-22 16:03:54.129 23275 23295 W bluetooth-a2dp: system/bta/av/bta_av_aact.cc:2448 bta_av_str_closed: peer xx:xx:xx:xx:8d:3d bta_handle:0x41 open_status:0 chnl:64 co_started:0
+10-22 16:03:54.129 23275 23295 W bluetooth: system/profile/avrcp/avrcp_sdp_records.cc:77 RemoveRecord: Trying to remove request id: 0 that doesn't exist
+10-22 16:03:54.129 23275 23295 E bluetooth-a2dp: system/btif/src/btif_av.cc:3237 btif_av_handle_event: Cannot find or create Sink peer for peer=00:00:00:00:00:00  bta_handle=0x41 : event dropped: BTA_AV_CLOSE_EVT(0x3)
+10-22 16:03:54.133 23275 23434 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:03:54.135 23275 23434 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:03:54.136 23275 23434 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:03:54.138 23275 23434 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:03:54.139 23275 23434 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:03:54.140 23275 23434 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:03:54.140 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:03:54.140 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:03:54.141 23275 23434 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:03:54.142 23275 23434 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:03:54.144 23275 23434 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:03:54.145 23275 23434 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:03:54.146 23275 23434 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:03:54.147 23275 23434 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:03:54.148 23275 23434 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:03:54.148 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:03:54.148 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:03:54.150 23275 23434 E BluetoothAdapterService: getActiveDevices: A2dpService is null
+10-22 16:03:54.150 23275 23295 W bluetooth: system/stack/avct/avct_lcb.cc:406 avct_lcb_last_ccb: avct_lcb_last_ccb
+10-22 16:03:54.150 23275 23295 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:0 allocated:1, 
+10-22 16:03:54.150 23275 23295 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:1 allocated:3, 
+10-22 16:03:54.150 23275 23295 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:2 allocated:0, 
+10-22 16:03:54.150 23275 23295 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:3 allocated:0, 
+10-22 16:03:54.150 23275 23295 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:4 allocated:0, 
+10-22 16:03:54.150 23275 23295 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:5 allocated:0, 
+10-22 16:03:54.150 23275 23295 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:6 allocated:0, 
+10-22 16:03:54.150 23275 23295 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:7 allocated:0, 
+10-22 16:03:54.150 23275 23295 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:8 allocated:0, 
+10-22 16:03:54.150 23275 23295 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:9 allocated:0, 
+10-22 16:03:54.150 23275 23295 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:10 allocated:0, 
+10-22 16:03:54.150 23275 23295 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:11 allocated:0, 
+10-22 16:03:54.150 23275 23295 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:12 allocated:0, 
+10-22 16:03:54.150 23275 23295 W bluetooth: system/stack/avct/avct_lcb.cc:408 avct_lcb_last_ccb: index:13 allocated:0, 
+10-22 16:03:54.153 23275 23295 W bluetooth: system/bta/ag/bta_ag_sco.cc:1259 bta_ag_sco_event: SCO_state_change: [BTA_AG_SCO_LISTEN_ST(0x01)]->[BTA_AG_SCO_SHUTDOWN_ST(0x00)] after event [BTA_AG_SCO_SHUTDOWN_E(0x06)]
+10-22 16:03:54.154 14913 18960 W NearbyMediums: [BLUETOOTH_RADIO] State was changed outside of our control. Updating the snapshot to match current radio state.
+10-22 16:03:54.158 23275 23275 W BluetoothHidHostServiceJni: android/app/jni/com_android_bluetooth_hid_host.cpp:225 cleanupNative: Cleaning up Bluetooth HID Interface...
+10-22 16:03:54.158 23275 23275 W BluetoothHidHostServiceJni: android/app/jni/com_android_bluetooth_hid_host.cpp:231 cleanupNative: Cleaning up Bluetooth GID callback object
+10-22 16:03:54.160 23275 23337 W BluetoothMetrics: system/metrics/src/android/metrics.cc:105 LogBluetoothEvent: Failed BluetoothEvent Upload - Address is Empty
+10-22 16:03:54.160 23275 23337 W BluetoothMetrics: system/metrics/src/android/metrics.cc:105 LogBluetoothEvent: Failed BluetoothEvent Upload - Address is Empty
+10-22 16:03:54.170 23275 23275 W BluetoothPanServiceJni: android/app/jni/com_android_bluetooth_pan.cpp:135 cleanupNative: Cleaning up Bluetooth PAN Interface...
+10-22 16:03:54.170 23275 23275 W BluetoothPanServiceJni: android/app/jni/com_android_bluetooth_pan.cpp:141 cleanupNative: Cleaning up Bluetooth PAN callback object
+10-22 16:03:54.171 23275 23337 W BluetoothMetrics: system/metrics/src/android/metrics.cc:105 LogBluetoothEvent: Failed BluetoothEvent Upload - Address is Empty
+10-22 16:03:54.174 23275 23337 W BluetoothMetrics: system/metrics/src/android/metrics.cc:105 LogBluetoothEvent: Failed BluetoothEvent Upload - Address is Empty
+10-22 16:03:54.176 23275 23300 E bluetooth: system/main/shim/acl.cc:1051 check_for_orphaned_acl_connections: Orphaned classic ACL handle:0x0001 bd_addr:xx:xx:xx:xx:8d:3d created:2026-10-22 16:03:38.840
+10-22 16:03:54.177 23275 23295 W bluetooth: system/main/shim/acl.cc:1514 DisconnectAllForSuspend: Disconnected open ACL connections
+10-22 16:03:54.178 23275 23295 W bluetooth: system/stack/rfcomm/rfc_port_fsm.cc:581 rfc_port_sm_disc_wait_ua: RFC_EVENT_DM|RFC_EVENT_UA[1], port_handle:5
+10-22 16:03:54.178 23275 23328 E bt_btif_hf: system/btif/src/btif_hf.cc:365 btif_hf_upstreams_evt: BTA_AG_CLOSE_EVT(0x3) Headset callback is not set
+10-22 16:03:54.186 23275 23295 W bluetooth: system/bta/gatt/bta_gatts.cc:101 BTA_GATTS_Disable: GATTS Module not enabled/already disabled
+10-22 16:03:54.188  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:------------onServiceDisconnected--------
+10-22 16:03:54.189  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:------------onServiceDisconnected--------
+10-22 16:03:54.190 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. Bluetooth A2dp is null.
+10-22 16:03:54.190 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:03:54.190 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. Bluetooth A2dp is null.
+10-22 16:03:54.190 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:03:54.202  1846  2489 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:54.204  2598  2685 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:54.204  2598  2685 W BluetoothA2dp: Proxy not attached to service
+10-22 16:03:54.205  2598  2685 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:54.205  2598  2685 W BluetoothA2dp: Proxy not attached to service
+10-22 16:03:54.208  2598  2684 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:54.208  2598  2684 W BluetoothA2dp: Proxy not attached to service
+10-22 16:03:54.208  2598  2684 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:54.208  2598  2684 W BluetoothA2dp: Proxy not attached to service
+10-22 16:03:54.209  2598  2663 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:54.209  2598  2663 W BluetoothA2dp: Proxy not attached to service
+10-22 16:03:54.212  2598  2663 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:54.212  2598  2663 W BluetoothA2dp: Proxy not attached to service
+10-22 16:03:54.219  1846  2489 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:54.237 14913 21771 W BluetoothLeScanner: stopScan(callback): BLE is not available
+10-22 16:03:54.242 14913 18960 W NearbyMediums: [BLUETOOTH_RADIO] State was changed outside of our control. Updating the snapshot to match current radio state.
+10-22 16:03:54.282 23275 23300 W BluetoothMetrics: system/metrics/src/android/metrics.cc:105 LogBluetoothEvent: Failed BluetoothEvent Upload - Address is Empty
+10-22 16:03:54.289  2598  2675 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:54.289  2598  2675 W BluetoothA2dp: Proxy not attached to service
+10-22 16:03:54.289  2598  2675 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:54.289  2598  2675 W BluetoothA2dp: Proxy not attached to service
+10-22 16:03:54.289  2598  2663 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:54.289  2598  2663 W BluetoothA2dp: Proxy not attached to service
+10-22 16:03:54.395 23275 23275 W BluetoothSdpJni: android/app/jni/com_android_bluetooth_sdp.cpp:483 cleanupNative: Cleaning up Bluetooth SDP Interface...
+10-22 16:03:54.396 23275 23275 W BluetoothSdpJni: android/app/jni/com_android_bluetooth_sdp.cpp:489 cleanupNative: Cleaning up Bluetooth SDP object
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.408 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.409 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.409 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.409 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.409 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.409 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.409 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.409 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.409 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.409 23275 23275 W bluetooth: system/gd/os/handler.cc:59 Post: Posting to a handler which has been cleared, thread: gd_stack_thread
+10-22 16:03:54.410  1198  1198 W vendor.qti.bluetooth@1.0-bluetooth_hci: BluetoothHci::close()
+10-22 16:03:54.410  1198  1198 W vendor.qti.bluetooth@1.0-data_handler: DataHandler::CleanUp()
+10-22 16:03:54.414  1198 23308 W vendor.qti.bluetooth@1.0-data_handler: OnPacketReady: Received event for command sent internally: 03 0c 
+10-22 16:03:54.415  1198 23308 W vendor.qti.bluetooth@1.0-data_handler: OnPacketReady: Received event for command sent internally: 08 fc 
+10-22 16:03:54.496  1198 23308 E vendor.qti.bluetooth@1.0-async_fd_watcher: ThreadRoutine: End of AsyncFdWatcher::ThreadRoutine
+10-22 16:03:54.497  1198  1198 W vendor.qti.bluetooth@1.0-async_fd_watcher: StopThread: stopped the work thread
+10-22 16:03:54.616  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:recv action : ACTION_STATE_CHANGED, state : 10
+10-22 16:03:54.618  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 0
+10-22 16:03:54.618  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothDiscovery:-stopBleScan- >>>>>> stopScan
+10-22 16:03:54.618  5464  5464 E DebugConfig: level:5M8AIVS:M8BluetoothDiscovery:stopBleScan: is NOT scanning now.
+10-22 16:03:54.619  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:recv action : ACTION_STATE_CHANGED, state : 10
+10-22 16:03:54.619  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='null; 48:73:CB:D2:8D:3D Device Edr ='null; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 0
+10-22 16:03:54.619  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothBle:-isBleConnecting- mConnectingBleDevice : null
+10-22 16:03:54.619  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothSpp:-isSppConnecting- mConnectingSppDevice : null
+10-22 16:03:54.619  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:Current connecting edr device:null
+10-22 16:03:54.619  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:-notifyEdrConnectStatus- deviceInfo : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='null; 48:73:CB:D2:8D:3D Device Edr ='null; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:03:54.619  5464  5464 E DebugConfig: , status : 0, isConnecting : false, mCurrentConnectingEdrDevice : null, isRequestUuid : false, deviceA2dpStatus : 0 ,deviceHfpStatus : 0
+10-22 16:03:54.620  5464  5464 E DebugConfig: level:5M8AIVS:M8BluetoothBase:onReceive: ACTION_ACL_DISCONNECTED, device:null type:0
+10-22 16:03:54.623  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothDiscovery:-stopBleScan- >>>>>> stopScan
+10-22 16:03:54.623  5464  5464 E DebugConfig: level:5M8AIVS:M8BluetoothDiscovery:stopBleScan: is NOT scanning now.
+10-22 16:03:54.645  1198 23303 E vendor.qti.bluetooth@1.0-wake_lock: Release wake lock not initialized/acquired
+10-22 16:03:54.710  1198  1198 W vendor.qti.bluetooth@1.0-data_handler: controller Cleanup done
+10-22 16:03:54.711  1198  1198 W vendor.qti.bluetooth@1.0-bluetooth_hci: BluetoothHci::close, finish cleanup
+10-22 16:03:55.875 23657 23657 W droid.bluetooth: AIBinder_linkToDeath is being called with a non-null cookie and no onUnlink callback set. Use AIBinder_DeathRecipient_setOnUnlinked to manage the lifetime of the cookie. This will become an abort.
+10-22 16:03:55.878 23657 23657 W bluetooth: system/gd/hal/hci_backend_aidl.cc:159 CreateAidl: Bluetooth AIDL HAL service not declared
+10-22 16:03:55.882  1198  1198 W vendor.qti.bluetooth@1.0-bluetooth_hci: BluetoothHci::initialize()
+10-22 16:03:55.882  1198  1198 W vendor.qti.bluetooth@1.0-data_handler: DataHandler:: Init()
+10-22 16:03:55.882  1198  1198 W vendor.qti.bluetooth@1.0-data_handler: SOC property  set to hastings
+10-22 16:03:55.884  1198 23692 E vendor.qti.bluetooth@1.0-async_fd_watcher: ThreadRoutine unable to set SCHED_FIFO for pid 1198, tid 23692, error Operation not permitted
+10-22 16:03:55.884  1198 23688 E vendor.qti.bluetooth@1.0-power_manager: 
+10-22 16:03:55.884  1198 23688 E vendor.qti.bluetooth@1.0-power_manager: PowerUpChip enable(1) retentionMode(1)
+10-22 16:03:55.896  1198 23692 W vendor.qti.bluetooth@1.0-data_handler: OnPacketReady: Received event for command sent internally: 03 0c 
+10-22 16:03:55.896  1198 23688 E vendor.qti.bluetooth@1.0-bluetooth_address: CMD result: 1
+10-22 16:03:55.897  1198 23692 W vendor.qti.bluetooth@1.0-data_handler: OnPacketReady: Received event for command sent internally: 14 fc 
+10-22 16:03:55.929 23657 23684 W bluetooth: system/gd/hci/le_scanning_manager_impl.cc:1664 on_apcf_read_extended_features_complete: Can not get valid LeAdvFilterCompleteView, return
+10-22 16:03:55.931 23657 23657 E bluetooth: system/gd/hal/socket_hal_impl_android.cc:98 SocketHalImpl: Socket service is not declared (checked for android.hardware.bluetooth.socket.IBluetoothSocket/lpp and android.hardware.bluetooth.socket.IBluetoothSocket/default)
+10-22 16:03:55.932 23657 23657 E bluetooth: system/gd/hal/gatt_hal_impl_android.cc:107 GattHalImpl: The service android.hardware.bluetooth.gatt.IBluetoothGatt/default is not declared
+10-22 16:03:55.970 23657 23657 W bluetooth: system/stack/gatt/gatt_main.cc:106 gatt_init: error initializing gatt offload
+10-22 16:03:55.971 23657 23657 W bluetooth: system/stack/btm/btm_inq.cc:1013 btm_clr_inq_result_flt: Memory being reset multiple times
+10-22 16:03:55.978 23657 23679 W bt_btif_sock_hal: system/btif/src/btif_sock_hal.cc:67 btsock_hal_init: RegisterSocketHalCallback() failed!
+10-22 16:03:55.978 23657 23679 W bt_btif_sock: system/btif/src/btif_sock.cc:118 btif_sock_init: error initializing socket hal: FAIL
+10-22 16:03:55.984  2598  2675 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:55.984  2598  2675 W BluetoothA2dp: Proxy not attached to service
+10-22 16:03:55.984  2598  2675 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:55.984  2598  2675 W BluetoothA2dp: Proxy not attached to service
+10-22 16:03:55.985  2598  2663 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:55.985  2598  2663 W BluetoothA2dp: Proxy not attached to service
+10-22 16:03:55.986 23657 23657 E BluetoothPhonePolicy: shouldEnableHapByDefault: No HapClientService
+10-22 16:03:55.986 23657 23657 W BluetoothAdapterService: deviceUuidsUpdated: Not broadcasting ACTION_UUID in adapter state: BLE_TURNING_ON
+10-22 16:03:55.993  2598  2683 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:55.993  2598  2683 W BluetoothA2dp: Proxy not attached to service
+10-22 16:03:55.993  2598  2683 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:55.993  2598  2683 W BluetoothA2dp: Proxy not attached to service
+10-22 16:03:55.994  2598  2663 W BluetoothHeadset: Proxy not attached to service
+10-22 16:03:55.994  2598  2663 W BluetoothA2dp: Proxy not attached to service
+10-22 16:03:56.003 23657 23679 W droid.bluetooth: AIBinder_linkToDeath is being called with a non-null cookie and no onUnlink callback set. Use AIBinder_DeathRecipient_setOnUnlinked to manage the lifetime of the cookie. This will become an abort.
+10-22 16:03:56.003 23657 23679 W droid.bluetooth: AIBinder_linkToDeath is being called with a non-null cookie and no onUnlink callback set. Use AIBinder_DeathRecipient_setOnUnlinked to manage the lifetime of the cookie. This will become an abort.
+10-22 16:03:56.034 23657 23657 E BluetoothHeadsetServiceJni: android/app/jni/com_android_bluetooth_hfp.cpp:785 enableSwbNative: Failed to disable
+10-22 16:03:56.039 23657 23679 W droid.bluetooth: AIBinder_linkToDeath is being called with a non-null cookie and no onUnlink callback set. Use AIBinder_DeathRecipient_setOnUnlinked to manage the lifetime of the cookie. This will become an abort.
+10-22 16:03:56.062 23657 23657 E BluetoothPhonePolicy: shouldEnableHapByDefault: No HapClientService
+10-22 16:03:56.063 23657 23657 W BluetoothAdapterService: deviceUuidsUpdated: Not broadcasting ACTION_UUID in adapter state: TURNING_ON
+10-22 16:03:56.073  1846  2523 E Binder  : 	at android.bluetooth.IBluetooth$Stub$Proxy.getBondedDevices(IBluetooth.java:2622)
+10-22 16:03:56.073  1846  2523 E Binder  : 	at android.bluetooth.BluetoothAdapter.lambda$getBondedDevices$30(BluetoothAdapter.java:2433)
+10-22 16:03:56.073  1846  2523 E Binder  : 	at android.bluetooth.BluetoothAdapter.$r8$lambda$qxPPj5VyD_iKGm7Xoh82AFf0KWk(BluetoothAdapter.java:0)
+10-22 16:03:56.073  1846  2523 E Binder  : 	at android.bluetooth.BluetoothAdapter$$ExternalSyntheticLambda45.applyOrThrow(D8$$SyntheticClass:0)
+10-22 16:03:56.073  1846  2523 E Binder  : 	at android.bluetooth.BluetoothUtils$RemoteExceptionIgnoringFunction.apply(BluetoothUtils.java:411)
+10-22 16:03:56.073  1846  2523 E Binder  : 	at android.bluetooth.BluetoothAdapter.callServiceIfEnabled(BluetoothAdapter.java:1041)
+10-22 16:03:56.073  1846  2523 E Binder  : 	at android.bluetooth.BluetoothAdapter.getBondedDevices(BluetoothAdapter.java:2430)
+10-22 16:03:56.073  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.updateBluetoothRoutesLockingOnlyInternalState(BluetoothDeviceRoutesManager.java:341)
+10-22 16:03:56.073  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.updateBluetoothRoutes(BluetoothDeviceRoutesManager.java:327)
+10-22 16:03:56.073  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.handleBluetoothAdapterStateChange(BluetoothDeviceRoutesManager.java:628)
+10-22 16:03:56.073  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.-$$Nest$mhandleBluetoothAdapterStateChange(BluetoothDeviceRoutesManager.java:0)
+10-22 16:03:56.073  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$AdapterStateChangedReceiver.lambda$onReceive$0(BluetoothDeviceRoutesManager.java:651)
+10-22 16:03:56.073  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$AdapterStateChangedReceiver.$r8$lambda$Y-94Ecaq9Hg_LeQVGeIkV-Bn8iw(BluetoothDeviceRoutesManager.java:0)
+10-22 16:03:56.073  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$AdapterStateChangedReceiver$$ExternalSyntheticLambda0.run(R8$$SyntheticClass:0)
+10-22 16:03:56.093  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:------------onServiceConnected--------profile=1
+10-22 16:03:56.093  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:------------onServiceConnected--------profile=2
+10-22 16:03:56.103 14913 18961 W NearbyMediums: [BLUETOOTH_RADIO] State was changed outside of our control. Updating the snapshot to match current radio state.
+10-22 16:03:56.110 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:03:56.110 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:03:56.110 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:03:56.114 14913 21771 E BluetoothLeScanner: stopLeScan(): Error state, mScannerId=0
+10-22 16:03:56.119 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:03:56.119 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:03:56.119 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:03:56.497  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:recv action : ACTION_STATE_CHANGED, state : 12
+10-22 16:03:56.498  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:recv action : ACTION_STATE_CHANGED, state : 12
+10-22 16:03:56.499  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: hfp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 1
+10-22 16:03:56.502  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:==========onHfpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 1
+10-22 16:03:56.986 23657 23679 W bluetooth: system/bta/ag/bta_ag_sco.cc:447 bta_ag_create_sco: device xx:xx:xx:xx:8d:3d is not active, active_device=00:00:00:00:00:00
+10-22 16:03:56.986 23657 23679 W bluetooth: system/bta/ag/bta_ag_sco.cc:1259 bta_ag_sco_event: SCO_state_change: [BTA_AG_SCO_SHUTDOWN_ST(0x00)]->[BTA_AG_SCO_LISTEN_ST(0x01)] after event [BTA_AG_SCO_LISTEN_E(0x00)]
+10-22 16:03:57.019  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: ACTION_ACL_CONNECTED,  device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:03:57.256 23735 23735 W cmd     : Can't find service bluetooth
+10-22 16:03:57.323 23657 23657 W BluetoothRemoteDevices: Invalid parameters device=false, batteryLevel=-1
+10-22 16:03:57.896  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: hfp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 2
+10-22 16:03:57.897  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:==========onHfpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 2
+10-22 16:04:00.303 23739 23739 W libc    : Access denied finding property "persist.bluetooth.a2dp_offload.disabled"
+10-22 16:04:00.297 23739 23739 W getprop : type=1400 audit(0.0:2849): avc:  denied  { read } for  name="u:object_r:bluetooth_a2dp_offload_prop:s0" dev="tmpfs" ino=3166 scontext=u:r:shell:s0 tcontext=u:object_r:bluetooth_a2dp_offload_prop:s0 tclass=file permissive=0
+10-22 16:04:01.488 23657 23667 W Binder  : java.lang.SecurityException: Neither user 10233 nor current process has android.permission.BLUETOOTH_PRIVILEGED.
+10-22 16:04:01.488 23657 23667 W Binder  : 	at com.android.bluetooth.a2dp.A2dpServiceBinder.setOptionalCodecsEnabled(A2dpServiceBinder.java:315)
+10-22 16:04:01.488 23657 23667 W Binder  : 	at android.bluetooth.IBluetoothA2dp$Stub.onTransact(IBluetoothA2dp.java:456)
+10-22 16:04:01.489 23657 23667 W Binder  : java.lang.SecurityException: Neither user 10233 nor current process has android.permission.BLUETOOTH_PRIVILEGED.
+10-22 16:04:01.489 23657 23667 W Binder  : 	at com.android.bluetooth.a2dp.A2dpServiceBinder.disableOptionalCodecs(A2dpServiceBinder.java:275)
+10-22 16:04:01.489 23657 23667 W Binder  : 	at android.bluetooth.IBluetoothA2dp$Stub.onTransact(IBluetoothA2dp.java:420)
+10-22 16:04:01.490 23657 23667 W Binder  : java.lang.SecurityException: The application with package name com.aistudio.redmibudsfixer.rbaf does not have a CDM association with the Bluetooth Device
+10-22 16:04:01.490 23657 23667 W Binder  : 	at com.android.bluetooth.Utils.enforceCdmAssociation(Utils.java:269)
+10-22 16:04:01.490 23657 23667 W Binder  : 	at com.android.bluetooth.Utils.enforceCdmAssociationIfNotBluetoothPrivileged(Utils.java:282)
+10-22 16:04:01.490 23657 23667 W Binder  : 	at com.android.bluetooth.a2dp.A2dpServiceBinder.setCodecConfigPreference(A2dpServiceBinder.java:248)
+10-22 16:04:01.490 23657 23667 W Binder  : 	at android.bluetooth.IBluetoothA2dp$Stub.onTransact(IBluetoothA2dp.java:400)
+10-22 16:04:01.492 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:04:01.492 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:04:01.492 23657 23679 W bluetooth-a2dp: system/btif/src/btif_av.cc:4005 btif_av_get_peer_sep: No active peer found
+10-22 16:04:01.492 23657 23679 W bluetooth-a2dp: system/bta/av/bta_av_main.cc:970 bta_av_link_role_ok: Unable to find link role for device:00:00:00:00:00:00
+10-22 16:04:01.499 23657 23657 E A2dpStateMachine: Incorrect event: 1
+10-22 16:04:01.508  1846  2523 E Binder  : 	at android.bluetooth.IBluetoothHearingAid$Stub$Proxy.getConnectedDevices(IBluetoothHearingAid.java:419)
+10-22 16:04:01.508  1846  2523 E Binder  : 	at android.bluetooth.BluetoothHearingAid.getConnectedDevices(BluetoothHearingAid.java:390)
+10-22 16:04:01.508  1846  2523 E Binder  : 	at com.android.server.media.BluetoothProfileMonitor.isProfileSupported(BluetoothProfileMonitor.java:165)
+10-22 16:04:01.508  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.getDeviceType(BluetoothDeviceRoutesManager.java:599)
+10-22 16:04:01.508  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.createBluetoothRoute(BluetoothDeviceRoutesManager.java:543)
+10-22 16:04:01.508  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.updateBluetoothRoutesLockingOnlyInternalState(BluetoothDeviceRoutesManager.java:348)
+10-22 16:04:01.508  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.updateBluetoothRoutes(BluetoothDeviceRoutesManager.java:327)
+10-22 16:04:01.508  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.-$$Nest$mupdateBluetoothRoutes(BluetoothDeviceRoutesManager.java:0)
+10-22 16:04:01.508  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$DeviceStateChangedReceiver.lambda$onReceive$0(BluetoothDeviceRoutesManager.java:665)
+10-22 16:04:01.508  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$DeviceStateChangedReceiver.$r8$lambda$YnNdjO8jUafYW9nGc-fEBOr8Jm4(BluetoothDeviceRoutesManager.java:0)
+10-22 16:04:01.508  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$DeviceStateChangedReceiver$$ExternalSyntheticLambda0.run(R8$$SyntheticClass:0)
+10-22 16:04:01.511  1846  2523 E Binder  : 	at android.bluetooth.IBluetoothA2dp$Stub$Proxy.getConnectedDevices(IBluetoothA2dp.java:561)
+10-22 16:04:01.511  1846  2523 E Binder  : 	at android.bluetooth.BluetoothA2dp.getConnectedDevices(BluetoothA2dp.java:394)
+10-22 16:04:01.511  1846  2523 E Binder  : 	at com.android.server.media.BluetoothProfileMonitor.isProfileSupported(BluetoothProfileMonitor.java:165)
+10-22 16:04:01.511  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.getConnectedProfiles(BluetoothDeviceRoutesManager.java:581)
+10-22 16:04:01.511  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.createBluetoothRoute(BluetoothDeviceRoutesManager.java:546)
+10-22 16:04:01.511  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.updateBluetoothRoutesLockingOnlyInternalState(BluetoothDeviceRoutesManager.java:348)
+10-22 16:04:01.511  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.updateBluetoothRoutes(BluetoothDeviceRoutesManager.java:327)
+10-22 16:04:01.511  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager.-$$Nest$mupdateBluetoothRoutes(BluetoothDeviceRoutesManager.java:0)
+10-22 16:04:01.511  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$DeviceStateChangedReceiver.lambda$onReceive$0(BluetoothDeviceRoutesManager.java:665)
+10-22 16:04:01.511  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$DeviceStateChangedReceiver.$r8$lambda$YnNdjO8jUafYW9nGc-fEBOr8Jm4(BluetoothDeviceRoutesManager.java:0)
+10-22 16:04:01.511  1846  2523 E Binder  : 	at com.android.server.media.BluetoothDeviceRoutesManager$DeviceStateChangedReceiver$$ExternalSyntheticLambda0.run(R8$$SyntheticClass:0)
+10-22 16:04:01.582 23657 23679 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:109 a2dp_sdp_cback: ATTR_ID_SERVICE_NAME attr not found!!
+10-22 16:04:01.582 23657 23679 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:122 a2dp_sdp_cback: ATTR_ID_PROVIDER_NAME attr not found!!
+10-22 16:04:01.582 23657 23679 E bluetooth-a2dp: system/stack/a2dp/a2dp_api.cc:135 a2dp_sdp_cback: ATTR_ID_SUPPORTED_FEATURES attr not found!!
+10-22 16:04:01.726 23657 23679 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:04:01.737 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:04:01.737 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:04:01.743 31630 31630 E BtExtCodecCtr: getBluetoothCodecStatus: Unable to get codec status. No active device.
+10-22 16:04:01.743 31630 31630 E BtExtCodecCtr: updateState: Bluetooth Codec Status is null
+10-22 16:04:01.768 23657 23657 E A2dpStateMachine: Connecting: ignoring event: AUDIO_DELAY_REPORTED
+10-22 16:04:01.768 23657 23657 E A2dpStateMachine:  - unhandledMessage: msg.what=104
+10-22 16:04:01.830 23657 23679 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:04:01.830 23657 23679 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:04:01.843 23657 23679 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:04:01.844 23657 23679 W bluetooth-a2dp-aidl: system/audio_hal_interface/aidl/a2dp/client_interface_aidl.cc:315 SetAllowedLatencyModes: BluetoothAudioHal is not ready: Status(-3, EX_ILLEGAL_ARGUMENT): ''. latency_modes_ is saved and it will be sent to BluetoothAudioHal at StartSession.
+10-22 16:04:01.863 31630 31630 E BaseBluetoothDlgPref: Unable to get summary of 31777. Size is 4
+10-22 16:04:01.866  1369 19924 E APM::HwModule: createDevice: could not find HW module for device type 'AUDIO_DEVICE_OUT_BLUETOOTH_A2DP' (00000080), encoded format 'AUDIO_FORMAT_LHDC'
+10-22 16:04:01.867  1846  2489 E AS.AudioDeviceInventory: APM failed to make available A2DP device addr=XX:XX:XX:XX:8D:3D error=1
+10-22 16:04:01.872 23657 23700 E BluetoothActiveDeviceManager: setLeAudioActiveDevice: Le Audio service not available
+10-22 16:04:01.900 31630 31630 E BaseBluetoothDlgPref: Unable to get summary of 31777. Size is 4
+10-22 16:04:01.909  1195 23811 E audio_hw_primary: offload_thread_loop: Compress handle is NULL
+10-22 16:04:01.965  1846  2489 E Binder  : 	at android.bluetooth.IBluetoothHeadset$Stub$Proxy.getAudioState(IBluetoothHeadset.java:802)
+10-22 16:04:01.965  1846  2489 E Binder  : 	at android.bluetooth.BluetoothHeadset.getAudioState(BluetoothHeadset.java:823)
+10-22 16:04:01.965  1846  2489 E Binder  : 	at com.android.server.audio.BtHelper$LegacyScoHelper.stopBluetoothSco(BtHelper.java:386)
+10-22 16:04:01.965  1846  2489 E Binder  : 	at com.android.server.audio.BtHelper.stopBluetoothSco(BtHelper.java:763)
+10-22 16:04:01.996  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBase:onReceive: a2dp ACTION_CONNECTION_STATE_CHANGED device : Redmi Buds 5 Pro, state : 1
+10-22 16:04:01.998  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:==========onA2dpStatus========= device : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0} ,status : 1
+10-22 16:04:01.999  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothBle:-isBleConnecting- mConnectingBleDevice : null
+10-22 16:04:01.999  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothSpp:-isSppConnecting- mConnectingSppDevice : null
+10-22 16:04:01.999  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothEdr:Current connecting edr device:null
+10-22 16:04:01.999  5464  5464 E DebugConfig: level:3M8AIVS:M8BluetoothEdr:-notifyEdrConnectStatus- deviceInfo : BluetoothDeviceInfo{ mCurrentOpType: 3 Device Ble='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D Device Edr ='Redmi Buds 5 Pro; 48:73:CB:D2:8D:3D vid:0xffff pid:0xffff MandatoryUpgrade:false channelStatus:0bleStatus:0 sppStatus:0 authStage:0 PowerMode:0 mBackUpMode:-1 isDeviceInfoUpdated:false authCmd:true FailedReason:0x0}
+10-22 16:04:01.999  5464  5464 E DebugConfig: , status : 1, isConnecting : false, mCurrentConnectingEdrDevice : null, isRequestUuid : false, deviceA2dpStatus : 1 ,deviceHfpStatus : 2
+10-22 16:04:02.000  5464  5464 E DebugConfig: level:4M8AIVS:M8BluetoothBas

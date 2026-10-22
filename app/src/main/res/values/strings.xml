@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Redmi Buds Audio Fixer</string>
+    <string name="fix_bluetooth_audio">Fix Bluetooth Audio</string>
+    <string name="status_idle">Status: Idle</string>
+    <string name="status_executed">Status: Routing Command Executed</string>
+    <string name="status_executing">Status: Executing...</string>
+    <string name="app_tagline">One-click Bluetooth Audio Routing Resolver</string>
+    <string name="command_info_label">Executed Shell Command</string>
+    <string name="command_placeholder">Runtime.getRuntime().exec(\"echo \'audio_trigger\'\")</string>
+    <string name="execution_output_label">Process Output</string>
+    <string name="exit_code_label">Exit Code</string>
+    <string name="theme_toggle_content_desc">Toggle color theme</string>
+    <string name="reset_status">Reset Status</string>
+    <string name="audio_icon_desc">Redmi Buds Audio Icon</string>
+    <string name="open_bluetooth_settings">Open Bluetooth Settings</string>
+    <string name="detected_device">Detected Bluetooth Device</string>
+    <string name="no_device_connected">No Bluetooth audio device connected</string>
+    <string name="audio_routing_active">Audio Output Routed to Bluetooth</string>
+</resources>
