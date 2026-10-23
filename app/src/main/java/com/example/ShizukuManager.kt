@@ -189,11 +189,12 @@ object ShizukuManager {
         val offloadCmd = "cmd audio set-speakerphone-on false 2>/dev/null || true"
         results.add(executeCommand(offloadCmd))
 
-        // 3. Disable LHDC / Optional Codecs globally in system settings to prevent APM error=1 (missing AUDIO_FORMAT_LHDC HAL)
+        // 3. Enable AAC (optional codecs: 1=supports, 2=enabled) while blocking LHDC
         val settingsCmds = listOf(
-            "settings put global bluetooth_a2dp_supports_optional_codecs 0",
-            "settings put global bluetooth_a2dp_optional_codecs_enabled 0",
-            "settings put global bluetooth_disabled_codecs \"lhdc,lhdc_v1,lhdc_v2,lhdc_v3,lhdc_v5,65536\""
+            "settings put global bluetooth_a2dp_supports_optional_codecs 1",
+            "settings put global bluetooth_a2dp_optional_codecs_enabled 2",
+            "settings put global bluetooth_disabled_codecs \"lhdc,lhdc_v1,lhdc_v2,lhdc_v3,lhdc_v5,65536\"",
+            "settings put global bluetooth_a2dp_disabled_codecs \"lhdc,lhdc_v1,lhdc_v2,lhdc_v3,lhdc_v5,65536\""
         )
         for (cmd in settingsCmds) {
             results.add(executeCommand(cmd))
@@ -213,10 +214,10 @@ object ShizukuManager {
             mac = audioAddrResult.output.lineSequence().firstOrNull()?.trim()
         }
 
-        // 5. If valid MAC address found, set A2DP device priority and disable optional codecs (LHDC)
+        // 5. If valid MAC address found, set A2DP device priority and enable optional codecs (AAC)
         if (!mac.isNullOrBlank() && mac.length == 17 && !mac.contains("00:00:00:00:00:00")) {
             val macUnderscore = mac.replace(":", "_")
-            val priorityCmd = "settings put global bluetooth_a2dp_src_priority_$mac 1000 && settings put global bluetooth_a2dp_sink_priority_$mac 1000 && settings put global bluetooth_a2dp_src_priority_$macUnderscore 1000 && settings put global bluetooth_a2dp_sink_priority_$macUnderscore 1000 && settings put secure bluetooth_a2dp_supports_optional_codecs_enabled_$mac 0 && settings put secure bluetooth_a2dp_supports_optional_codecs_enabled_$macUnderscore 0 && settings put global bluetooth_a2dp_supports_optional_codecs_enabled_$mac 0 && settings put global bluetooth_a2dp_supports_optional_codecs_enabled_$macUnderscore 0"
+            val priorityCmd = "settings put global bluetooth_a2dp_src_priority_$mac 1000 && settings put global bluetooth_a2dp_sink_priority_$mac 1000 && settings put global bluetooth_a2dp_src_priority_$macUnderscore 1000 && settings put global bluetooth_a2dp_sink_priority_$macUnderscore 1000 && settings put secure bluetooth_a2dp_supports_optional_codecs_enabled_$mac 2 && settings put secure bluetooth_a2dp_supports_optional_codecs_enabled_$macUnderscore 2 && settings put global bluetooth_a2dp_supports_optional_codecs_enabled_$mac 2 && settings put global bluetooth_a2dp_supports_optional_codecs_enabled_$macUnderscore 2"
             results.add(executeCommand(priorityCmd))
         }
 

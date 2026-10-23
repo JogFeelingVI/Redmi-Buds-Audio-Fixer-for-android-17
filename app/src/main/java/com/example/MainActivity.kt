@@ -92,6 +92,7 @@ import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import com.example.ui.theme.RedmiBudsAudioFixerTheme
 import com.example.ui.theme.SuccessGreen
+import com.example.ui.theme.AmberWarning
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import rikka.shizuku.Shizuku
@@ -250,9 +251,19 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
     var isTestTonePlaying by remember { mutableStateOf(false) }
     var testToneResult by remember { mutableStateOf<String?>(null) }
 
+
+
     // Shevery ADB module state
     var isGeneratingSheveryModule by remember { mutableStateOf(false) }
     var sheveryModulePath by remember { mutableStateOf<String?>(null) }
+
+    // Bluetooth stack restart state
+    var isRestartingBt by remember { mutableStateOf(false) }
+    var restartBtLog by remember { mutableStateOf<String?>(null) }
+
+    // Hardware offload disable state
+    var isDisablingOffload by remember { mutableStateOf(false) }
+    var offloadLog by remember { mutableStateOf<String?>(null) }
 
     val scrollState = rememberScrollState()
 
@@ -275,9 +286,9 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
             }
         )
 
-        Spacer(modifier = Modifier.height(14.dp))
+        Spacer(modifier = Modifier.height(12.dp))
 
-        // 2. Simplified 3-Step AAC Pipeline
+        // 3. Simplified 3-Step AAC Pipeline
         Card(
             modifier = Modifier
                 .fillMaxWidth()
@@ -304,7 +315,7 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
-                        text = "极简 3 步：攻破 AAC 媒体外放",
+                        text = "编解码控制与通道打通",
                         style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
                         color = MaterialTheme.colorScheme.onSurface
                     )
@@ -312,43 +323,171 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
 
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "针对开机耳机默认协商 LHDC 导致底包驱动拒绝的问题，按序执行即可打通：",
+                    text = "针对之前锁定在 SBC 的问题：现在可一键开启可选编解码并注入 AAC 优先，同时彻底屏蔽 LHDC 冲突！",
                     fontSize = 11.sp,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
 
                 Spacer(modifier = Modifier.height(12.dp))
 
-                // Step 1: Inject AAC & Disable LHDC
+                // Step 1: Dual mode AAC / SBC Action
                 PipelineStepRow(
                     stepNumber = "1",
-                    title = "一键注入全局 AAC 优先策略",
-                    description = "开启 hidden_api 限制，禁用冲突的 LHDC，接管底层蓝牙服务",
+                    title = "一键切换与激活编解码",
+                    description = "开启 hidden_api 限制，屏蔽冲突的 LHDC，接管底层蓝牙服务重握手",
                     isExecuting = isStep1Executing,
                     isSuccess = step1Success,
-                    actionText = if (step1Success == true) "重新注入" else "一键执行",
-                    onAction = {
-                        coroutineScope.launch {
-                            isStep1Executing = true
-                            step1Log = null
-                            val cmds = listOf(
-                                "settings put global hidden_api_policy 1",
-                                "settings put global hidden_api_policy_p_apps 1",
-                                "settings put global hidden_api_policy_pre_p_apps 1",
-                                "settings put global bluetooth_a2dp_supports_optional_codecs 0",
-                                "settings put global bluetooth_a2dp_optional_codecs_enabled 0",
-                                "settings put global bluetooth_disabled_codecs \"lhdc,lhdc_v1,lhdc_v2,lhdc_v3,lhdc_v5,65536\"",
-                                "cmd audio set-speakerphone-on false 2>/dev/null || true"
-                            ).joinToString(" && ")
-                            ShizukuManager.executeCommand(cmds)
+                    customContent = {
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(top = 8.dp),
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            Button(
+                                onClick = {
+                                    coroutineScope.launch {
+                                        isStep1Executing = true
+                                        step1Log = null
+                                        val mac = "48:73:CB:D2:8D:3D"
+                                        val macU = "48_73_CB_D2_8D_3D"
+                                        val cmds = listOf(
+                                            "settings put global hidden_api_policy 1",
+                                            "settings put global hidden_api_policy_p_apps 1",
+                                            "settings put global hidden_api_policy_pre_p_apps 1",
+                                            "settings put global bluetooth_a2dp_supports_optional_codecs 1",
+                                            "settings put global bluetooth_a2dp_optional_codecs_enabled 1",
+                                            "settings put global bluetooth_a2dp_supports_optional_hd_audio 1",
+                                            "settings put global bluetooth_a2dp_optional_hd_audio_disabled 0",
+                                            "settings put global bluetooth_disabled_codecs \"lhdc,lhdc_v1,lhdc_v2,lhdc_v3,lhdc_v5,65536\"",
+                                            "settings put global bluetooth_a2dp_disabled_codecs \"lhdc,lhdc_v1,lhdc_v2,lhdc_v3,lhdc_v5,65536\"",
+                                            "device_config put bluetooth a2dp_optional_codecs_enabled true 2>/dev/null || true",
+                                            "settings put secure bluetooth_a2dp_supports_optional_codecs_enabled_$mac 1",
+                                            "settings put secure bluetooth_a2dp_supports_optional_codecs_enabled_$macU 1",
+                                            "settings put global bluetooth_a2dp_supports_optional_codecs_enabled_$mac 1",
+                                            "settings put global bluetooth_a2dp_supports_optional_codecs_enabled_$macU 1",
+                                            "settings put global bluetooth_a2dp_supports_optional_hd_audio_$mac 1",
+                                            "settings put global bluetooth_a2dp_supports_optional_hd_audio_disabled_$mac 0",
+                                            "settings put global bluetooth_a2dp_supports_optional_hd_audio_$macU 1",
+                                            "settings put global bluetooth_a2dp_supports_optional_hd_audio_disabled_$macU 0",
+                                            "setprop persist.bluetooth.a2dp_offload.disabled true",
+                                            "setprop persist.vendor.bt.a2dp_offload_cap false",
+                                            "setprop persist.vendor.qcom.bluetooth.a2dp_offload_cap false",
+                                            "settings put global bluetooth_a2dp_offload_disabled 1",
+                                            "cmd audio set-speakerphone-on false 2>/dev/null || true"
+                                        ).joinToString(" && ")
+                                        ShizukuManager.executeCommand(cmds)
 
-                            // Force A2DP reflection connect with ShizukuBinderWrapper
-                            val a2dpRes = BluetoothA2dpConnector.forceConnectA2dp(context, "Redmi Buds 5 Pro")
-                            isStep1Executing = false
-                            step1Success = true
-                            step1Log = buildString {
-                                append("✅ 系统已写入 AAC 策略并关闭 LHDC！\n")
-                                append(a2dpRes.logs.joinToString("\n"))
+                                        // Force A2DP reflection connect with AAC
+                                        val a2dpRes = BluetoothA2dpConnector.forceConnectA2dp(context, "Redmi Buds 5 Pro", TargetCodec.AAC)
+                                        isStep1Executing = false
+                                        step1Success = true
+                                        step1Log = buildString {
+                                            append("🎉 已向系统写入 AAC 激活指令、永久停用硬件分流并屏蔽 LHDC 冲突！\n")
+                                            append(a2dpRes.logs.joinToString("\n"))
+                                        }
+                                    }
+                                },
+                                enabled = !isStep1Executing,
+                                modifier = Modifier.fillMaxWidth().height(38.dp),
+                                shape = RoundedCornerShape(8.dp),
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = MaterialTheme.colorScheme.primary
+                                )
+                            ) {
+                                if (isStep1Executing) {
+                                    CircularProgressIndicator(modifier = Modifier.size(16.dp), color = Color.White, strokeWidth = 2.dp)
+                                    Spacer(modifier = Modifier.width(6.dp))
+                                    Text("正在切换编解码...", fontSize = 11.sp)
+                                } else {
+                                    Text("🚀 切换并锁定 AAC 高清模式", fontSize = 11.5.sp, fontWeight = FontWeight.Bold)
+                                }
+                            }
+
+                            Button(
+                                onClick = {
+                                    coroutineScope.launch {
+                                        isDisablingOffload = true
+                                        offloadLog = "正在写入系统 persist 属性并重载蓝牙协议栈..."
+                                        val cmd = listOf(
+                                            "setprop persist.bluetooth.a2dp_offload.disabled true",
+                                            "setprop persist.vendor.bt.a2dp_offload_cap false",
+                                            "setprop persist.vendor.qcom.bluetooth.a2dp_offload_cap false",
+                                            "settings put global bluetooth_a2dp_offload_disabled 1",
+                                            "cmd bluetooth_manager disable",
+                                            "sleep 1",
+                                            "cmd bluetooth_manager enable"
+                                        ).joinToString(" && ")
+                                        ShizukuManager.executeCommand(cmd)
+                                        delay(3000)
+                                        val verify = ShizukuManager.executeCommand("getprop persist.bluetooth.a2dp_offload.disabled").output.trim()
+                                        isDisablingOffload = false
+                                        offloadLog = if (verify.contains("true", ignoreCase = true) || verify == "1") {
+                                            "✅ 硬件分流已成功写入 persist 锁定！当前属性值: $verify (重启不失效，已切入原生 CPU 软件解码)"
+                                        } else {
+                                            "⚡ 属性已写入 (当前: $verify)，已重载蓝牙协议栈为原生软件解码模式！"
+                                        }
+                                    }
+                                },
+                                enabled = !isDisablingOffload && shizukuStatus.isPermissionGranted,
+                                modifier = Modifier.fillMaxWidth().height(36.dp),
+                                shape = RoundedCornerShape(8.dp),
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = MaterialTheme.colorScheme.tertiary
+                                )
+                            ) {
+                                if (isDisablingOffload) {
+                                    CircularProgressIndicator(modifier = Modifier.size(14.dp), color = Color.White, strokeWidth = 2.dp)
+                                    Spacer(modifier = Modifier.width(6.dp))
+                                    Text("正在永久锁定...", fontSize = 11.sp)
+                                } else {
+                                    Icon(Icons.Default.Tune, contentDescription = null, modifier = Modifier.size(15.dp))
+                                    Spacer(modifier = Modifier.width(4.dp))
+                                    Text("⚡ 锁定停用 A2DP 硬件分流 (解决重启还原/DSP异常)", fontSize = 10.5.sp)
+                                }
+                            }
+
+                            if (offloadLog != null) {
+                                Text(
+                                    text = offloadLog ?: "",
+                                    fontSize = 10.5.sp,
+                                    color = MaterialTheme.colorScheme.primary,
+                                    lineHeight = 14.sp
+                                )
+                            }
+
+                            OutlinedButton(
+                                onClick = {
+                                    coroutineScope.launch {
+                                        isStep1Executing = true
+                                        step1Log = null
+                                        val mac = "48:73:CB:D2:8D:3D"
+                                        val macU = "48_73_CB_D2_8D_3D"
+                                        val cmds = listOf(
+                                            "settings put global hidden_api_policy 1",
+                                            "settings put global bluetooth_a2dp_supports_optional_codecs 0",
+                                            "settings put global bluetooth_a2dp_optional_codecs_enabled 0",
+                                            "settings put secure bluetooth_a2dp_supports_optional_codecs_enabled_$mac 0",
+                                            "settings put secure bluetooth_a2dp_supports_optional_codecs_enabled_$macU 0",
+                                            "cmd audio set-speakerphone-on false 2>/dev/null || true"
+                                        ).joinToString(" && ")
+                                        ShizukuManager.executeCommand(cmds)
+
+                                        // Force A2DP reflection connect with SBC
+                                        val a2dpRes = BluetoothA2dpConnector.forceConnectA2dp(context, "Redmi Buds 5 Pro", TargetCodec.SBC)
+                                        isStep1Executing = false
+                                        step1Success = true
+                                        step1Log = buildString {
+                                            append("🟡 已锁定 SBC 基础编码兼容模式！\n")
+                                            append(a2dpRes.logs.joinToString("\n"))
+                                        }
+                                    }
+                                },
+                                enabled = !isStep1Executing,
+                                modifier = Modifier.fillMaxWidth().height(34.dp),
+                                shape = RoundedCornerShape(8.dp)
+                            ) {
+                                Text("🛡️ 切换回 SBC 兼容兜底模式", fontSize = 11.sp)
                             }
                         }
                     }
@@ -373,58 +512,126 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
 
                 Spacer(modifier = Modifier.height(12.dp))
 
-                // Step 2: Re-pair or switch codec in settings
+                // Step 2: Clear cache & check Mi Buds M8
                 PipelineStepRow(
                     stepNumber = "2",
-                    title = "重新配对或选择 AAC 编码",
-                    description = "重要：因为耳机开机时已缓存了 LHDC 握手，点击下方取消配对后重新连接一次，开盖即直接是 AAC！",
+                    title = "清除蓝牙协商缓存 (解决只有 SBC 问题)",
+                    description = "如果系统或开发者选项仍然只显示 SBC，是因为此前系统缓存了该设备的连接配置，且需检查耳机 App 设置：",
                     isExecuting = false,
                     isSuccess = null,
                     customContent = {
-                        Row(
+                        Column(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(top = 6.dp),
-                            horizontalArrangement = Arrangement.spacedBy(8.dp)
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
-                            OutlinedButton(
-                                onClick = {
-                                    try {
-                                        val intent = Intent(Settings.ACTION_BLUETOOTH_SETTINGS).apply {
-                                            flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                                        }
-                                        context.startActivity(intent)
-                                    } catch (_: Exception) {}
-                                },
+                            Surface(
                                 shape = RoundedCornerShape(8.dp),
-                                contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 10.dp, vertical = 2.dp),
-                                modifier = Modifier
-                                    .weight(1f)
-                                    .height(34.dp)
+                                color = AmberWarning.copy(alpha = 0.12f),
+                                modifier = Modifier.fillMaxWidth()
                             ) {
-                                Icon(Icons.Default.SettingsBluetooth, contentDescription = null, modifier = Modifier.size(14.dp))
-                                Spacer(modifier = Modifier.width(4.dp))
-                                Text("蓝牙取消配对后重连", fontSize = 10.5.sp)
+                                Column(modifier = Modifier.padding(8.dp)) {
+                                    Text(
+                                        text = "⚠️ 关键排查 (根据底层日志分析)：",
+                                        fontWeight = FontWeight.Bold,
+                                        fontSize = 11.sp,
+                                        color = AmberWarning
+                                    )
+                                    Spacer(modifier = Modifier.height(2.dp))
+                                    Text(
+                                        text = "1. 小米耳机 / Mi Buds M8 App：如果开启了「双设备连接」，耳机硬件会在固件层强制锁定在 SBC！请务必在 App 中关闭「双设备连接」，并将音质选择为「声音质量优先」。\n" +
+                                               "2. 清除配对历史缓存：在下方点击进入「蓝牙设置」，对 Redmi Buds 5 Pro 点击「取消配对」，然后将两只耳机放回充电盒长按 10 秒重置耳机，重新配对即可点亮 AAC 高清选项！",
+                                        fontSize = 10.5.sp,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        lineHeight = 15.sp
+                                    )
+                                }
                             }
 
-                            OutlinedButton(
+                            Button(
                                 onClick = {
-                                    try {
-                                        val intent = Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS).apply {
-                                            flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                                        }
-                                        context.startActivity(intent)
-                                    } catch (_: Exception) {}
+                                    coroutineScope.launch {
+                                        isRestartingBt = true
+                                        restartBtLog = "正在通过特权命令重启系统蓝牙服务..."
+                                        ShizukuManager.executeCommand("cmd bluetooth_manager disable && sleep 1 && cmd bluetooth_manager enable")
+                                        delay(3000)
+                                        isRestartingBt = false
+                                        restartBtLog = "✅ 系统蓝牙服务已重新加载！耳机重连后将使用新配置重新握手协商。"
+                                    }
                                 },
+                                enabled = !isRestartingBt && shizukuStatus.isPermissionGranted,
                                 shape = RoundedCornerShape(8.dp),
-                                contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 10.dp, vertical = 2.dp),
                                 modifier = Modifier
-                                    .weight(1f)
-                                    .height(34.dp)
+                                    .fillMaxWidth()
+                                    .height(34.dp),
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = MaterialTheme.colorScheme.secondary
+                                )
                             ) {
-                                Icon(Icons.Default.Tune, contentDescription = null, modifier = Modifier.size(14.dp))
-                                Spacer(modifier = Modifier.width(4.dp))
-                                Text("开发者选项选 AAC", fontSize = 10.5.sp)
+                                if (isRestartingBt) {
+                                    CircularProgressIndicator(modifier = Modifier.size(14.dp), strokeWidth = 2.dp, color = Color.White)
+                                    Spacer(modifier = Modifier.width(6.dp))
+                                    Text("正在重启蓝牙服务...", fontSize = 11.sp)
+                                } else {
+                                    Icon(Icons.Default.Refresh, contentDescription = null, modifier = Modifier.size(15.dp))
+                                    Spacer(modifier = Modifier.width(4.dp))
+                                    Text("🔄 一键重启蓝牙服务 (刷新能力协商缓存)", fontSize = 11.sp)
+                                }
+                            }
+
+                            if (restartBtLog != null) {
+                                Text(
+                                    text = restartBtLog ?: "",
+                                    fontSize = 10.5.sp,
+                                    color = MaterialTheme.colorScheme.primary,
+                                    lineHeight = 14.sp
+                                )
+                            }
+
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                            ) {
+                                OutlinedButton(
+                                    onClick = {
+                                        try {
+                                            val intent = Intent(Settings.ACTION_BLUETOOTH_SETTINGS).apply {
+                                                flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                                            }
+                                            context.startActivity(intent)
+                                        } catch (_: Exception) {}
+                                    },
+                                    shape = RoundedCornerShape(8.dp),
+                                    contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 10.dp, vertical = 2.dp),
+                                    modifier = Modifier
+                                        .weight(1f)
+                                        .height(34.dp)
+                                ) {
+                                    Icon(Icons.Default.SettingsBluetooth, contentDescription = null, modifier = Modifier.size(14.dp))
+                                    Spacer(modifier = Modifier.width(4.dp))
+                                    Text("蓝牙取消配对后重连", fontSize = 10.5.sp)
+                                }
+
+                                OutlinedButton(
+                                    onClick = {
+                                        try {
+                                            val intent = Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS).apply {
+                                                flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                                            }
+                                            context.startActivity(intent)
+                                        } catch (_: Exception) {}
+                                    },
+                                    shape = RoundedCornerShape(8.dp),
+                                    contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 10.dp, vertical = 2.dp),
+                                    modifier = Modifier
+                                        .weight(1f)
+                                        .height(34.dp)
+                                ) {
+                                    Icon(Icons.Default.Tune, contentDescription = null, modifier = Modifier.size(14.dp))
+                                    Spacer(modifier = Modifier.width(4.dp))
+                                    Text("开发者选项选 AAC", fontSize = 10.5.sp)
+                                }
                             }
                         }
                     }

@@ -192,9 +192,10 @@ object StepByStepAudioFixer {
             "settings put global hidden_api_policy 1",
             "settings put global hidden_api_policy_p_apps 1",
             "settings put global hidden_api_policy_pre_p_apps 1",
-            "settings put global bluetooth_a2dp_supports_optional_codecs 0",
-            "settings put global bluetooth_a2dp_optional_codecs_enabled 0",
+            "settings put global bluetooth_a2dp_supports_optional_codecs 1",
+            "settings put global bluetooth_a2dp_optional_codecs_enabled 2",
             "settings put global bluetooth_disabled_codecs \"lhdc,lhdc_v1,lhdc_v2,lhdc_v3,lhdc_v5,65536\"",
+            "settings put global bluetooth_a2dp_disabled_codecs \"lhdc,lhdc_v1,lhdc_v2,lhdc_v3,lhdc_v5,65536\"",
             "cmd audio set-speakerphone-on false 2>/dev/null || true"
         ).joinToString(" && ")
         ShizukuManager.executeCommand(setupCmd)
@@ -220,7 +221,7 @@ object StepByStepAudioFixer {
      * Step 5: Force A2DP Handshake & Active Sink Binding (with LHDC Disabling & AAC Enforcement)
      */
     suspend fun executeStep5(context: Context): DiagnosticStep = withContext(Dispatchers.IO) {
-        // 1. Configure settings priority & disable LHDC for Redmi Buds MAC
+        // 1. Configure settings priority & enable AAC for Redmi Buds MAC
         val mac = "48:73:CB:D2:8D:3D"
         val macUnderscore = "48_73_CB_D2_8D_3D"
         val prioCmd = listOf(
@@ -228,19 +229,20 @@ object StepByStepAudioFixer {
             "settings put global bluetooth_a2dp_sink_priority_$mac 1000",
             "settings put global bluetooth_a2dp_src_priority_$macUnderscore 1000",
             "settings put global bluetooth_a2dp_sink_priority_$macUnderscore 1000",
-            "settings put secure bluetooth_a2dp_supports_optional_codecs_enabled_$mac 0",
-            "settings put secure bluetooth_a2dp_supports_optional_codecs_enabled_$macUnderscore 0",
-            "settings put global bluetooth_a2dp_supports_optional_codecs_enabled_$mac 0",
-            "settings put global bluetooth_a2dp_supports_optional_codecs_enabled_$macUnderscore 0",
-            "settings put global bluetooth_a2dp_supports_optional_codecs 0",
-            "settings put global bluetooth_a2dp_optional_codecs_enabled 0",
+            "settings put secure bluetooth_a2dp_supports_optional_codecs_enabled_$mac 2",
+            "settings put secure bluetooth_a2dp_supports_optional_codecs_enabled_$macUnderscore 2",
+            "settings put global bluetooth_a2dp_supports_optional_codecs_enabled_$mac 2",
+            "settings put global bluetooth_a2dp_supports_optional_codecs_enabled_$macUnderscore 2",
+            "settings put global bluetooth_a2dp_supports_optional_codecs 1",
+            "settings put global bluetooth_a2dp_optional_codecs_enabled 2",
             "settings put global bluetooth_disabled_codecs \"lhdc,lhdc_v1,lhdc_v2,lhdc_v3,lhdc_v5,65536\"",
+            "settings put global bluetooth_a2dp_disabled_codecs \"lhdc,lhdc_v1,lhdc_v2,lhdc_v3,lhdc_v5,65536\"",
             "cmd audio set-speakerphone-on false 2>/dev/null || true"
         ).joinToString(" && ")
         ShizukuManager.executeCommand(prioCmd)
 
         // 2. Invoke hidden BluetoothA2dp APIs with LHDC disabled and AAC forced
-        val a2dpResult = BluetoothA2dpConnector.forceConnectA2dp(context, "Redmi Buds 5 Pro")
+        val a2dpResult = BluetoothA2dpConnector.forceConnectA2dp(context, "Redmi Buds 5 Pro", TargetCodec.AAC)
 
         // 3. Trigger MediaRouter2
         MediaRouter2Helper.transferToBluetooth(context, "Redmi Buds 5 Pro")
