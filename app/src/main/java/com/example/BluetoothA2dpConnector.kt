@@ -356,19 +356,29 @@ object BluetoothA2dpConnector {
                 } catch (_: Exception) {}
             }
 
-            // 2. Configure A2DP codec preference (AAC = 1, SBC = 0, priority = 1000000, 44.1kHz, 16bit, Stereo)
-            try {
-                val codecConfigClass = Class.forName("android.bluetooth.BluetoothCodecConfig")
-                var codecConfigObj: Any? = null
+            // 2. Multi-Codec Priority Configuration:
+            // Proactively DISABLE LHDC, LDAC, aptX, and LC3 to prevent AudioPolicy APM error=1 crash!
+            // LineageOS lacks proprietary vendor LHDC HAL, causing createDevice APM crash if LHDC is selected.
+            val codecConfigClass = Class.forName("android.bluetooth.BluetoothCodecConfig")
+            val setCodecConfigMethod = try {
+                a2dpClass.getMethod("setCodecConfigPreference", BluetoothDevice::class.java, codecConfigClass).apply {
+                    isAccessible = true
+                }
+            } catch (e: Exception) {
+                logs.add("setCodecConfigPreference 反射获取失败: ${e.message}")
+                null
+            }
+
+            fun buildCodecConfig(typeInt: Int, priority: Int, sampleRate: Int = 1, bits: Int = 1, channel: Int = 2): Any? {
                 try {
                     val builderClass = Class.forName("android.bluetooth.BluetoothCodecConfig\$Builder")
                     val builder = builderClass.getDeclaredConstructor().newInstance()
-                    builderClass.getMethod("setCodecType", Int::class.javaPrimitiveType).invoke(builder, targetCodec.typeInt)
-                    builderClass.getMethod("setCodecPriority", Int::class.javaPrimitiveType).invoke(builder, 1000000) // HIGHEST
-                    builderClass.getMethod("setSampleRate", Int::class.javaPrimitiveType).invoke(builder, 1) // 1 = 44.1kHz
-                    builderClass.getMethod("setBitsPerSample", Int::class.javaPrimitiveType).invoke(builder, 1) // 1 = 16-bit
-                    builderClass.getMethod("setChannelMode", Int::class.javaPrimitiveType).invoke(builder, 2) // 2 = Stereo
-                    codecConfigObj = builderClass.getMethod("build").invoke(builder)
+                    builderClass.getMethod("setCodecType", Int::class.javaPrimitiveType).invoke(builder, typeInt)
+                    builderClass.getMethod("setCodecPriority", Int::class.javaPrimitiveType).invoke(builder, priority)
+                    builderClass.getMethod("setSampleRate", Int::class.javaPrimitiveType).invoke(builder, sampleRate)
+                    builderClass.getMethod("setBitsPerSample", Int::class.javaPrimitiveType).invoke(builder, bits)
+                    builderClass.getMethod("setChannelMode", Int::class.javaPrimitiveType).invoke(builder, channel)
+                    return builderClass.getMethod("build").invoke(builder)
                 } catch (_: Exception) {
                     try {
                         val constructor = codecConfigClass.getConstructor(
@@ -382,22 +392,65 @@ object BluetoothA2dpConnector {
                             Long::class.javaPrimitiveType,
                             Long::class.javaPrimitiveType
                         )
-                        codecConfigObj = constructor.newInstance(targetCodec.typeInt, 1000000, 1, 1, 2, 0L, 0L, 0L, 0L)
-                    } catch (_: Exception) {}
+                        return constructor.newInstance(typeInt, priority, sampleRate, bits, channel, 0L, 0L, 0L, 0L)
+                    } catch (_: Exception) {
+                        return null
+                    }
                 }
+            }
 
-                if (codecConfigObj != null) {
-                    val setCodecConfigMethod = a2dpClass.getMethod(
-                        "setCodecConfigPreference",
-                        BluetoothDevice::class.java,
-                        codecConfigClass
-                    )
-                    setCodecConfigMethod.isAccessible = true
-                    val res = setCodecConfigMethod.invoke(a2dpProxy, candidate, codecConfigObj)
-                    logs.add("🟢 已向蓝牙栈注入 ${targetCodec.name} 完整编解码配置(44.1kHz/16bit/立体声): setCodecConfigPreference = $res")
+            if (setCodecConfigMethod != null) {
+                if (targetCodec == TargetCodec.AAC) {
+                    // 2a. First, systematically disable conflicting codecs:
+                    // LHDC variants: 65536 (0x10000), 7 (V5), 8 (V3), 9 (V2), 10 (V1)
+                    // LDAC: 4, aptX HD: 3, aptX: 2, LC3: 5, Opus: 6
+                    val codecsToDisable = listOf(65536, 7, 8, 9, 10, 4, 3, 2, 5, 6)
+                    for (cType in codecsToDisable) {
+                        val disabledObj = buildCodecConfig(typeInt = cType, priority = -1, sampleRate = 0, bits = 0, channel = 0)
+                        if (disabledObj != null) {
+                            try {
+                                setCodecConfigMethod.invoke(a2dpProxy, candidate, disabledObj)
+                            } catch (_: Exception) {}
+                        }
+                    }
+                    logs.add("🛡️ 已向底层蓝牙协议栈下发 LHDC/LDAC/aptX 禁用指令 (Priority = -1，避免 AudioPolicy 崩溃)")
+
+                    // 2b. Set SBC to fallback priority (1)
+                    val sbcFallback = buildCodecConfig(typeInt = 0, priority = 1, sampleRate = 1, bits = 1, channel = 2)
+                    if (sbcFallback != null) {
+                        try {
+                            setCodecConfigMethod.invoke(a2dpProxy, candidate, sbcFallback)
+                        } catch (_: Exception) {}
+                    }
+
+                    // 2c. Set AAC to HIGHEST priority (1,000,000)
+                    val aacHighest = buildCodecConfig(typeInt = 1, priority = 1000000, sampleRate = 1, bits = 1, channel = 2)
+                    if (aacHighest != null) {
+                        try {
+                            val res = setCodecConfigMethod.invoke(a2dpProxy, candidate, aacHighest)
+                            logs.add("🟢 已注入 AAC 极高优先级 (1000000 / 44.1kHz 16bit 立体声): $res")
+                        } catch (e: Exception) {
+                            logs.add("注入 AAC 提示: ${e.message}")
+                        }
+                    }
+                } else {
+                    // SBC Mode: Disable AAC and optional codecs
+                    val aacDisabled = buildCodecConfig(typeInt = 1, priority = -1, sampleRate = 0, bits = 0, channel = 0)
+                    if (aacDisabled != null) {
+                        try {
+                            setCodecConfigMethod.invoke(a2dpProxy, candidate, aacDisabled)
+                        } catch (_: Exception) {}
+                    }
+                    val sbcHighest = buildCodecConfig(typeInt = 0, priority = 1000000, sampleRate = 1, bits = 1, channel = 2)
+                    if (sbcHighest != null) {
+                        try {
+                            val res = setCodecConfigMethod.invoke(a2dpProxy, candidate, sbcHighest)
+                            logs.add("🟡 已锁定 SBC 编解码极高优先级 (1000000): $res")
+                        } catch (e: Exception) {
+                            logs.add("注入 SBC 提示: ${e.message}")
+                        }
+                    }
                 }
-            } catch (e: Exception) {
-                logs.add("setCodecConfigPreference 执行提示: ${e.message}")
             }
 
             // 3. Set Connection Policy & Auto-connect priority
@@ -415,27 +468,28 @@ object BluetoothA2dpConnector {
                 } catch (_: Exception) {}
             }
 
-            // 4. Clean A2DP re-negotiation: Disconnect and Reconnect A2DP profile so new codec takes effect
-            try {
-                val disconnectMethod = a2dpClass.getMethod("disconnect", BluetoothDevice::class.java)
-                disconnectMethod.isAccessible = true
-                disconnectMethod.invoke(a2dpProxy, candidate)
-                logs.add("已触发临时重置 A2DP 通道，正在重新协商 ${targetCodec.name}...")
-                kotlinx.coroutines.delay(400)
-            } catch (_: Exception) {}
-
-            try {
-                val connectMethod = a2dpClass.getMethod("connect", BluetoothDevice::class.java)
-                connectMethod.isAccessible = true
-                val res = connectMethod.invoke(a2dpProxy, candidate) as? Boolean
-                connectCalled = (res == true)
-                logs.add("Invoked BluetoothA2dp.connect($devName): result = $res")
-            } catch (e: Exception) {
-                logs.add("BluetoothA2dp.connect reflection error: ${e.message}")
+            // 4. In-place connection handling:
+            // If already connected, do NOT disconnect/reconnect! AOSP performs in-place AVDTP Reconfigure.
+            // Disconnecting triggers an unneeded link teardown and SDP attribute cache misses.
+            val currentConnState = a2dpProxy.getConnectionState(candidate)
+            if (currentConnState != BluetoothProfile.STATE_CONNECTED) {
+                logs.add("设备当前未在 A2DP 媒体通道连接，正在发起连接...")
+                try {
+                    val connectMethod = a2dpClass.getMethod("connect", BluetoothDevice::class.java)
+                    connectMethod.isAccessible = true
+                    val res = connectMethod.invoke(a2dpProxy, candidate) as? Boolean
+                    connectCalled = (res == true)
+                    logs.add("Invoked BluetoothA2dp.connect($devName): result = $res")
+                } catch (e: Exception) {
+                    logs.add("BluetoothA2dp.connect reflection error: ${e.message}")
+                }
+            } else {
+                logs.add("设备已处于 A2DP 连接中，协议栈已原位热重载编解码偏好。")
+                connectCalled = true
             }
 
             // Pause for codec renegotiation
-            kotlinx.coroutines.delay(600)
+            kotlinx.coroutines.delay(500)
 
             // 5. Try invoking hidden setActiveDevice(BluetoothDevice)
             try {

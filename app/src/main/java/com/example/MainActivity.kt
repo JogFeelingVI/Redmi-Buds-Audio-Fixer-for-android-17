@@ -243,34 +243,20 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
         }
     }
 
-    // Step states
-    var isStep1Executing by remember { mutableStateOf(false) }
-    var step1Log by remember { mutableStateOf<String?>(null) }
-    var step1Success by remember { mutableStateOf<Boolean?>(null) }
+    // Action states
+    var isAacExecuting by remember { mutableStateOf(false) }
+    var aacLog by remember { mutableStateOf<String?>(null) }
+    var aacSuccess by remember { mutableStateOf<Boolean?>(null) }
 
     var isTestTonePlaying by remember { mutableStateOf(false) }
     var testToneResult by remember { mutableStateOf<String?>(null) }
-
-
-
-    // Shevery ADB module state
-    var isGeneratingSheveryModule by remember { mutableStateOf(false) }
-    var sheveryModulePath by remember { mutableStateOf<String?>(null) }
-
-    // Bluetooth stack restart state
-    var isRestartingBt by remember { mutableStateOf(false) }
-    var restartBtLog by remember { mutableStateOf<String?>(null) }
-
-    // Hardware offload disable state
-    var isDisablingOffload by remember { mutableStateOf(false) }
-    var offloadLog by remember { mutableStateOf<String?>(null) }
 
     val scrollState = rememberScrollState()
 
     Column(
         modifier = modifier
             .verticalScroll(scrollState)
-            .padding(horizontal = 16.dp, vertical = 10.dp)
+            .padding(horizontal = 16.dp, vertical = 12.dp)
             .navigationBarsPadding(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -286,9 +272,9 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
             }
         )
 
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(14.dp))
 
-        // 3. Simplified 3-Step AAC Pipeline
+        // 2. Simplified Codec & Sound Card
         Card(
             modifier = Modifier
                 .fillMaxWidth()
@@ -302,7 +288,7 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
                 color = MaterialTheme.colorScheme.primary.copy(alpha = 0.35f)
             )
         ) {
-            Column(modifier = Modifier.padding(14.dp)) {
+            Column(modifier = Modifier.padding(16.dp)) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier.fillMaxWidth()
@@ -315,7 +301,7 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
-                        text = "编解码控制与通道打通",
+                        text = "编解码控制与发声测试",
                         style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
                         color = MaterialTheme.colorScheme.onSurface
                     )
@@ -323,20 +309,21 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
 
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "针对之前锁定在 SBC 的问题：现在可一键开启可选编解码并注入 AAC 优先，同时彻底屏蔽 LHDC 冲突！",
+                    text = "针对无法通过常规设置启用 AAC 的问题：一键屏蔽引发底层 APM 崩溃的 LHDC 并强行锁定 AAC 优先级，随后可直接测试发声。",
                     fontSize = 11.sp,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    lineHeight = 15.sp
                 )
 
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(14.dp))
 
-                // Step 1: Dual mode AAC / SBC Action
+                // Section 1: AAC / SBC Switching
                 PipelineStepRow(
                     stepNumber = "1",
-                    title = "一键切换与激活编解码",
-                    description = "开启 hidden_api 限制，屏蔽冲突的 LHDC，接管底层蓝牙服务重握手",
-                    isExecuting = isStep1Executing,
-                    isSuccess = step1Success,
+                    title = "编解码切换 (屏蔽 LHDC)",
+                    description = "屏蔽缺失驱动的 LHDC，注入 AAC 极高优先级 (1000000)，接管底层蓝牙协议栈握手",
+                    isExecuting = isAacExecuting,
+                    isSuccess = aacSuccess,
                     customContent = {
                         Column(
                             modifier = Modifier
@@ -347,8 +334,8 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
                             Button(
                                 onClick = {
                                     coroutineScope.launch {
-                                        isStep1Executing = true
-                                        step1Log = null
+                                        isAacExecuting = true
+                                        aacLog = null
                                         val mac = "48:73:CB:D2:8D:3D"
                                         val macU = "48_73_CB_D2_8D_3D"
                                         val cmds = listOf(
@@ -359,8 +346,8 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
                                             "settings put global bluetooth_a2dp_optional_codecs_enabled 1",
                                             "settings put global bluetooth_a2dp_supports_optional_hd_audio 1",
                                             "settings put global bluetooth_a2dp_optional_hd_audio_disabled 0",
-                                            "settings put global bluetooth_disabled_codecs \"lhdc,lhdc_v1,lhdc_v2,lhdc_v3,lhdc_v5,65536\"",
-                                            "settings put global bluetooth_a2dp_disabled_codecs \"lhdc,lhdc_v1,lhdc_v2,lhdc_v3,lhdc_v5,65536\"",
+                                            "settings put global bluetooth_disabled_codecs \"lhdc,lhdc_v1,lhdc_v2,lhdc_v3,lhdc_v5,65536,ldac\"",
+                                            "settings put global bluetooth_a2dp_disabled_codecs \"lhdc,lhdc_v1,lhdc_v2,lhdc_v3,lhdc_v5,65536,ldac\"",
                                             "device_config put bluetooth a2dp_optional_codecs_enabled true 2>/dev/null || true",
                                             "settings put secure bluetooth_a2dp_supports_optional_codecs_enabled_$mac 1",
                                             "settings put secure bluetooth_a2dp_supports_optional_codecs_enabled_$macU 1",
@@ -370,97 +357,42 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
                                             "settings put global bluetooth_a2dp_supports_optional_hd_audio_disabled_$mac 0",
                                             "settings put global bluetooth_a2dp_supports_optional_hd_audio_$macU 1",
                                             "settings put global bluetooth_a2dp_supports_optional_hd_audio_disabled_$macU 0",
-                                            "setprop persist.bluetooth.a2dp_offload.disabled true",
-                                            "setprop persist.vendor.bt.a2dp_offload_cap false",
-                                            "setprop persist.vendor.qcom.bluetooth.a2dp_offload_cap false",
                                             "settings put global bluetooth_a2dp_offload_disabled 1",
                                             "cmd audio set-speakerphone-on false 2>/dev/null || true"
                                         ).joinToString(" && ")
                                         ShizukuManager.executeCommand(cmds)
 
-                                        // Force A2DP reflection connect with AAC
+                                        // Force A2DP reflection connect with AAC and LHDC disabled
                                         val a2dpRes = BluetoothA2dpConnector.forceConnectA2dp(context, "Redmi Buds 5 Pro", TargetCodec.AAC)
-                                        isStep1Executing = false
-                                        step1Success = true
-                                        step1Log = buildString {
-                                            append("🎉 已向系统写入 AAC 激活指令、永久停用硬件分流并屏蔽 LHDC 冲突！\n")
+                                        isAacExecuting = false
+                                        aacSuccess = a2dpRes.isSuccess
+                                        aacLog = buildString {
+                                            append("🎉 已写入 AAC 策略并下发 LHDC 屏蔽规则 (避免 AudioPolicy APM 崩溃)！\n")
                                             append(a2dpRes.logs.joinToString("\n"))
                                         }
                                     }
                                 },
-                                enabled = !isStep1Executing,
-                                modifier = Modifier.fillMaxWidth().height(38.dp),
+                                enabled = !isAacExecuting,
+                                modifier = Modifier.fillMaxWidth().height(40.dp),
                                 shape = RoundedCornerShape(8.dp),
                                 colors = ButtonDefaults.buttonColors(
                                     containerColor = MaterialTheme.colorScheme.primary
                                 )
                             ) {
-                                if (isStep1Executing) {
+                                if (isAacExecuting) {
                                     CircularProgressIndicator(modifier = Modifier.size(16.dp), color = Color.White, strokeWidth = 2.dp)
                                     Spacer(modifier = Modifier.width(6.dp))
-                                    Text("正在切换编解码...", fontSize = 11.sp)
+                                    Text("正在切换编解码...", fontSize = 11.5.sp)
                                 } else {
-                                    Text("🚀 切换并锁定 AAC 高清模式", fontSize = 11.5.sp, fontWeight = FontWeight.Bold)
+                                    Text("🚀 切换并锁定 AAC 高清模式 (屏蔽 LHDC)", fontSize = 12.sp, fontWeight = FontWeight.Bold)
                                 }
-                            }
-
-                            Button(
-                                onClick = {
-                                    coroutineScope.launch {
-                                        isDisablingOffload = true
-                                        offloadLog = "正在写入系统 persist 属性并重载蓝牙协议栈..."
-                                        val cmd = listOf(
-                                            "setprop persist.bluetooth.a2dp_offload.disabled true",
-                                            "setprop persist.vendor.bt.a2dp_offload_cap false",
-                                            "setprop persist.vendor.qcom.bluetooth.a2dp_offload_cap false",
-                                            "settings put global bluetooth_a2dp_offload_disabled 1",
-                                            "cmd bluetooth_manager disable",
-                                            "sleep 1",
-                                            "cmd bluetooth_manager enable"
-                                        ).joinToString(" && ")
-                                        ShizukuManager.executeCommand(cmd)
-                                        delay(3000)
-                                        val verify = ShizukuManager.executeCommand("getprop persist.bluetooth.a2dp_offload.disabled").output.trim()
-                                        isDisablingOffload = false
-                                        offloadLog = if (verify.contains("true", ignoreCase = true) || verify == "1") {
-                                            "✅ 硬件分流已成功写入 persist 锁定！当前属性值: $verify (重启不失效，已切入原生 CPU 软件解码)"
-                                        } else {
-                                            "⚡ 属性已写入 (当前: $verify)，已重载蓝牙协议栈为原生软件解码模式！"
-                                        }
-                                    }
-                                },
-                                enabled = !isDisablingOffload && shizukuStatus.isPermissionGranted,
-                                modifier = Modifier.fillMaxWidth().height(36.dp),
-                                shape = RoundedCornerShape(8.dp),
-                                colors = ButtonDefaults.buttonColors(
-                                    containerColor = MaterialTheme.colorScheme.tertiary
-                                )
-                            ) {
-                                if (isDisablingOffload) {
-                                    CircularProgressIndicator(modifier = Modifier.size(14.dp), color = Color.White, strokeWidth = 2.dp)
-                                    Spacer(modifier = Modifier.width(6.dp))
-                                    Text("正在永久锁定...", fontSize = 11.sp)
-                                } else {
-                                    Icon(Icons.Default.Tune, contentDescription = null, modifier = Modifier.size(15.dp))
-                                    Spacer(modifier = Modifier.width(4.dp))
-                                    Text("⚡ 锁定停用 A2DP 硬件分流 (解决重启还原/DSP异常)", fontSize = 10.5.sp)
-                                }
-                            }
-
-                            if (offloadLog != null) {
-                                Text(
-                                    text = offloadLog ?: "",
-                                    fontSize = 10.5.sp,
-                                    color = MaterialTheme.colorScheme.primary,
-                                    lineHeight = 14.sp
-                                )
                             }
 
                             OutlinedButton(
                                 onClick = {
                                     coroutineScope.launch {
-                                        isStep1Executing = true
-                                        step1Log = null
+                                        isAacExecuting = true
+                                        aacLog = null
                                         val mac = "48:73:CB:D2:8D:3D"
                                         val macU = "48_73_CB_D2_8D_3D"
                                         val cmds = listOf(
@@ -475,33 +407,33 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
 
                                         // Force A2DP reflection connect with SBC
                                         val a2dpRes = BluetoothA2dpConnector.forceConnectA2dp(context, "Redmi Buds 5 Pro", TargetCodec.SBC)
-                                        isStep1Executing = false
-                                        step1Success = true
-                                        step1Log = buildString {
+                                        isAacExecuting = false
+                                        aacSuccess = a2dpRes.isSuccess
+                                        aacLog = buildString {
                                             append("🟡 已锁定 SBC 基础编码兼容模式！\n")
                                             append(a2dpRes.logs.joinToString("\n"))
                                         }
                                     }
                                 },
-                                enabled = !isStep1Executing,
+                                enabled = !isAacExecuting,
                                 modifier = Modifier.fillMaxWidth().height(34.dp),
                                 shape = RoundedCornerShape(8.dp)
                             ) {
-                                Text("🛡️ 切换回 SBC 兼容兜底模式", fontSize = 11.sp)
+                                Text("🛡️ 切换回 SBC 兼容模式", fontSize = 11.sp)
                             }
                         }
                     }
                 )
 
-                if (step1Log != null) {
-                    Spacer(modifier = Modifier.height(6.dp))
+                if (aacLog != null) {
+                    Spacer(modifier = Modifier.height(8.dp))
                     Surface(
                         shape = RoundedCornerShape(8.dp),
                         color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.6f),
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Text(
-                            text = step1Log ?: "",
+                            text = aacLog ?: "",
                             fontFamily = FontFamily.Monospace,
                             fontSize = 10.sp,
                             color = MaterialTheme.colorScheme.onSurface,
@@ -510,138 +442,11 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
                     }
                 }
 
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(14.dp))
 
-                // Step 2: Clear cache & check Mi Buds M8
+                // Section 2: Sound Test
                 PipelineStepRow(
                     stepNumber = "2",
-                    title = "清除蓝牙协商缓存 (解决只有 SBC 问题)",
-                    description = "如果系统或开发者选项仍然只显示 SBC，是因为此前系统缓存了该设备的连接配置，且需检查耳机 App 设置：",
-                    isExecuting = false,
-                    isSuccess = null,
-                    customContent = {
-                        Column(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(top = 6.dp),
-                            verticalArrangement = Arrangement.spacedBy(8.dp)
-                        ) {
-                            Surface(
-                                shape = RoundedCornerShape(8.dp),
-                                color = AmberWarning.copy(alpha = 0.12f),
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                Column(modifier = Modifier.padding(8.dp)) {
-                                    Text(
-                                        text = "⚠️ 关键排查 (根据底层日志分析)：",
-                                        fontWeight = FontWeight.Bold,
-                                        fontSize = 11.sp,
-                                        color = AmberWarning
-                                    )
-                                    Spacer(modifier = Modifier.height(2.dp))
-                                    Text(
-                                        text = "1. 小米耳机 / Mi Buds M8 App：如果开启了「双设备连接」，耳机硬件会在固件层强制锁定在 SBC！请务必在 App 中关闭「双设备连接」，并将音质选择为「声音质量优先」。\n" +
-                                               "2. 清除配对历史缓存：在下方点击进入「蓝牙设置」，对 Redmi Buds 5 Pro 点击「取消配对」，然后将两只耳机放回充电盒长按 10 秒重置耳机，重新配对即可点亮 AAC 高清选项！",
-                                        fontSize = 10.5.sp,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                        lineHeight = 15.sp
-                                    )
-                                }
-                            }
-
-                            Button(
-                                onClick = {
-                                    coroutineScope.launch {
-                                        isRestartingBt = true
-                                        restartBtLog = "正在通过特权命令重启系统蓝牙服务..."
-                                        ShizukuManager.executeCommand("cmd bluetooth_manager disable && sleep 1 && cmd bluetooth_manager enable")
-                                        delay(3000)
-                                        isRestartingBt = false
-                                        restartBtLog = "✅ 系统蓝牙服务已重新加载！耳机重连后将使用新配置重新握手协商。"
-                                    }
-                                },
-                                enabled = !isRestartingBt && shizukuStatus.isPermissionGranted,
-                                shape = RoundedCornerShape(8.dp),
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .height(34.dp),
-                                colors = ButtonDefaults.buttonColors(
-                                    containerColor = MaterialTheme.colorScheme.secondary
-                                )
-                            ) {
-                                if (isRestartingBt) {
-                                    CircularProgressIndicator(modifier = Modifier.size(14.dp), strokeWidth = 2.dp, color = Color.White)
-                                    Spacer(modifier = Modifier.width(6.dp))
-                                    Text("正在重启蓝牙服务...", fontSize = 11.sp)
-                                } else {
-                                    Icon(Icons.Default.Refresh, contentDescription = null, modifier = Modifier.size(15.dp))
-                                    Spacer(modifier = Modifier.width(4.dp))
-                                    Text("🔄 一键重启蓝牙服务 (刷新能力协商缓存)", fontSize = 11.sp)
-                                }
-                            }
-
-                            if (restartBtLog != null) {
-                                Text(
-                                    text = restartBtLog ?: "",
-                                    fontSize = 10.5.sp,
-                                    color = MaterialTheme.colorScheme.primary,
-                                    lineHeight = 14.sp
-                                )
-                            }
-
-                            Row(
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.spacedBy(8.dp)
-                            ) {
-                                OutlinedButton(
-                                    onClick = {
-                                        try {
-                                            val intent = Intent(Settings.ACTION_BLUETOOTH_SETTINGS).apply {
-                                                flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                                            }
-                                            context.startActivity(intent)
-                                        } catch (_: Exception) {}
-                                    },
-                                    shape = RoundedCornerShape(8.dp),
-                                    contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 10.dp, vertical = 2.dp),
-                                    modifier = Modifier
-                                        .weight(1f)
-                                        .height(34.dp)
-                                ) {
-                                    Icon(Icons.Default.SettingsBluetooth, contentDescription = null, modifier = Modifier.size(14.dp))
-                                    Spacer(modifier = Modifier.width(4.dp))
-                                    Text("蓝牙取消配对后重连", fontSize = 10.5.sp)
-                                }
-
-                                OutlinedButton(
-                                    onClick = {
-                                        try {
-                                            val intent = Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS).apply {
-                                                flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                                            }
-                                            context.startActivity(intent)
-                                        } catch (_: Exception) {}
-                                    },
-                                    shape = RoundedCornerShape(8.dp),
-                                    contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 10.dp, vertical = 2.dp),
-                                    modifier = Modifier
-                                        .weight(1f)
-                                        .height(34.dp)
-                                ) {
-                                    Icon(Icons.Default.Tune, contentDescription = null, modifier = Modifier.size(14.dp))
-                                    Spacer(modifier = Modifier.width(4.dp))
-                                    Text("开发者选项选 AAC", fontSize = 10.5.sp)
-                                }
-                            }
-                        }
-                    }
-                )
-
-                Spacer(modifier = Modifier.height(12.dp))
-
-                // Step 3: Sound Test
-                PipelineStepRow(
-                    stepNumber = "3",
                     title = "立体声发声测试 (验证耳麦物理发声)",
                     description = "播放 1.5 秒双声道独立提示音，强制使用蓝牙通路，严禁扬声器外放",
                     isExecuting = isTestTonePlaying,
@@ -656,7 +461,7 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
                             testToneResult = if (success) {
                                 "🔊 已向耳麦注入测试音！左右耳是否听到清晰的提示声？"
                             } else {
-                                "⚠️ 未检测到已激活的 A2DP 通道，为了防止扬声器扰民已主动放弃外放。请先执行步骤 1 与步骤 2！"
+                                "⚠️ 未检测到已激活的 A2DP 通道，为了防止扬声器扰民已主动放弃外放。请先点击上方的「切换并锁定 AAC 高清模式」！"
                             }
                         }
                     }
@@ -676,135 +481,6 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
                             color = if (hasA2dp) SuccessGreen else MaterialTheme.colorScheme.error,
                             modifier = Modifier.padding(8.dp)
                         )
-                    }
-                }
-            }
-        }
-
-        Spacer(modifier = Modifier.height(14.dp))
-
-        // 3. Shevery ADB Module Generator (Rootless persistent fix)
-        Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .widthIn(max = 420.dp),
-            shape = RoundedCornerShape(16.dp),
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
-            ),
-            border = androidx.compose.foundation.BorderStroke(
-                width = 1.dp,
-                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.35f)
-            )
-        ) {
-            Column(modifier = Modifier.padding(14.dp)) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Download,
-                        contentDescription = null,
-                        tint = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.size(20.dp)
-                    )
-                    Spacer(modifier = Modifier.width(8.dp))
-                    Column {
-                        Text(
-                            text = "Shevery「ADB 模块」生成器 (免 Root 开机常驻)",
-                            style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
-                            color = MaterialTheme.colorScheme.onSurface
-                        )
-                        Text(
-                            text = "适配 Shevery ADB 模块管理器的免 Root 常驻方案",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            fontSize = 10.5.sp
-                        )
-                    }
-                }
-
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = "针对 LineageOS 无 Root 环境：利用 Shevery (Shizuku 增强版) 的「ADB 模块」机制，开机自动执行底层音频锁定脚本！\n" +
-                            "• 开机服务 (service.sh): 屏蔽 LHDC 异常冲突，将 Redmi Buds 5 Pro 的 SBC/AAC 媒体优先级设为最高 (1000)。\n" +
-                            "• 即时动作 (action.sh): 在 Shevery 模块界面中随时点击「执行」立即重刷媒体通道路由。",
-                    fontSize = 11.sp,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    lineHeight = 16.sp
-                )
-
-                Spacer(modifier = Modifier.height(10.dp))
-
-                Button(
-                    onClick = {
-                        coroutineScope.launch {
-                            isGeneratingSheveryModule = true
-                            val (success, path) = SheveryModuleGenerator.generateSheveryModuleZip(context)
-                            isGeneratingSheveryModule = false
-                            sheveryModulePath = if (success) path else null
-                            Toast.makeText(
-                                context,
-                                if (success) "Shevery ADB 模块已生成至 Download 目录！" else "生成失败: $path",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        }
-                    },
-                    enabled = !isGeneratingSheveryModule,
-                    modifier = Modifier.fillMaxWidth().height(42.dp),
-                    shape = RoundedCornerShape(8.dp),
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = MaterialTheme.colorScheme.primary
-                    )
-                ) {
-                    if (isGeneratingSheveryModule) {
-                        CircularProgressIndicator(modifier = Modifier.size(16.dp), color = Color.White, strokeWidth = 2.dp)
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text("正在打包 Shevery 模块...", fontSize = 11.5.sp)
-                    } else {
-                        Icon(Icons.Default.Download, contentDescription = null, modifier = Modifier.size(16.dp))
-                        Spacer(modifier = Modifier.width(6.dp))
-                        Text("一键生成 Shevery ADB 模块 ZIP", fontSize = 11.5.sp, fontWeight = FontWeight.Bold)
-                    }
-                }
-
-                if (sheveryModulePath != null) {
-                    Spacer(modifier = Modifier.height(10.dp))
-                    Surface(
-                        shape = RoundedCornerShape(8.dp),
-                        color = SuccessGreen.copy(alpha = 0.12f),
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Column(modifier = Modifier.padding(10.dp)) {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                Icon(Icons.Default.CheckCircle, contentDescription = null, tint = SuccessGreen, modifier = Modifier.size(16.dp))
-                                Spacer(modifier = Modifier.width(6.dp))
-                                Text(
-                                    text = "Shevery 模块生成成功！",
-                                    fontSize = 11.5.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    color = SuccessGreen
-                                )
-                            }
-                            Spacer(modifier = Modifier.height(4.dp))
-                            Text(
-                                text = sheveryModulePath ?: "",
-                                fontFamily = FontFamily.Monospace,
-                                fontSize = 10.sp,
-                                color = MaterialTheme.colorScheme.onSurface
-                            )
-                            Spacer(modifier = Modifier.height(6.dp))
-                            Text(
-                                text = "【使用教程】\n" +
-                                        "1. 打开手机中的 Shevery (或带有 ADB 模块支持的管理器)；\n" +
-                                        "2. 进入「ADB 模块」页面，点击「+」或「从本地安装」；\n" +
-                                        "3. 选中 Download 目录中的 RedmiBuds5Pro_A2DP_Fix_Shevery_ADB_Module.zip；\n" +
-                                        "4. 安装后开启模块开关。每次设备开机或 Shevery 启动都会自动执行守护，无需手动配置！",
-                                fontSize = 10.5.sp,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                lineHeight = 15.sp
-                            )
-                        }
                     }
                 }
             }
@@ -1034,3 +710,5 @@ fun PipelineStepRow(
         }
     }
 }
+
+

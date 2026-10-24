@@ -83,10 +83,10 @@ object SheveryModuleGenerator {
                 settings put global bluetooth_a2dp_optional_hd_audio_disabled_${'$'}{MAC_U} 0
                 device_config put bluetooth a2dp_optional_codecs_enabled true 2>/dev/null || true
 
-                # 6. 永久停用 A2DP 硬件分流，切换为系统原生软件编码 (彻底避免高通 DSP Compress handle NULL 崩溃)
-                setprop persist.bluetooth.a2dp_offload.disabled true
-                setprop persist.vendor.bt.a2dp_offload_cap false
-                setprop persist.vendor.qcom.bluetooth.a2dp_offload_cap false
+                # 6. 停用 A2DP 硬件分流配置 (若系统设置已停用则完全切入原生 CPU 软解)
+                setprop persist.bluetooth.a2dp_offload.disabled true 2>/dev/null || true
+                setprop persist.vendor.bt.a2dp_offload_cap false 2>/dev/null || true
+                setprop persist.vendor.qcom.bluetooth.a2dp_offload_cap false 2>/dev/null || true
                 settings put global bluetooth_a2dp_offload_disabled 1
 
                 # 7. 关闭扬声器外放回退
@@ -132,10 +132,10 @@ object SheveryModuleGenerator {
                 settings put global bluetooth_a2dp_supports_optional_hd_audio_${'$'}{MAC_U} 1
                 settings put global bluetooth_a2dp_optional_hd_audio_disabled_${'$'}{MAC_U} 0
 
-                echo "[4/5] 永久停用 A2DP 硬件分流 (锁定为原生软件解码)..."
-                setprop persist.bluetooth.a2dp_offload.disabled true
-                setprop persist.vendor.bt.a2dp_offload_cap false
-                setprop persist.vendor.qcom.bluetooth.a2dp_offload_cap false
+                echo "[4/5] 停用 A2DP 硬件分流配置 (软解优先)..."
+                setprop persist.bluetooth.a2dp_offload.disabled true 2>/dev/null || true
+                setprop persist.vendor.bt.a2dp_offload_cap false 2>/dev/null || true
+                setprop persist.vendor.qcom.bluetooth.a2dp_offload_cap false 2>/dev/null || true
                 settings put global bluetooth_a2dp_offload_disabled 1
 
                 echo "[5/5] 强制关闭扬声器外放回退..."
