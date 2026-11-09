@@ -328,7 +328,7 @@ object BluetoothA2dpConnector {
                     val res = enableOptionalMethod.invoke(a2dpProxy, candidate)
                     logs.add("🟢 激活可选高清编解码 (AAC) 支持: enableOptionalCodecs = $res")
                 } catch (e: Exception) {
-                    logs.add("enableOptionalCodecs 提示: ${e.message}")
+                    logs.add("enableOptionalCodecs 提示: $e")
                 }
 
                 try {

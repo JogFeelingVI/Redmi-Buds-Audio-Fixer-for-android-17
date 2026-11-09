@@ -335,7 +335,12 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
                                 onClick = {
                                     coroutineScope.launch {
                                         isAacExecuting = true
-                                        aacLog = null
+                                        val status = ShizukuManager.checkStatus(context)
+                                        if (!status.isRunning || !status.isPermissionGranted) {
+                                            isAacExecuting = false
+                                            Toast.makeText(context, "Shizuku 未运行或未授权", Toast.LENGTH_SHORT).show()
+                                            return@launch
+                                        }
                                         val mac = "48:73:CB:D2:8D:3D"
                                         val macU = "48_73_CB_D2_8D_3D"
                                         val cmds = listOf(
@@ -370,6 +375,16 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
                                             append("🎉 已写入 AAC 策略并下发 LHDC 屏蔽规则 (避免 AudioPolicy APM 崩溃)！\n")
                                             append(a2dpRes.logs.joinToString("\n"))
                                         }
+                                        // 保存日志到 Downloads
+                                        try {
+                                            val values = android.content.ContentValues().apply {
+                                                put(android.provider.MediaStore.Downloads.DISPLAY_NAME, "aac_fix_log_${System.currentTimeMillis()}.txt")
+                                                put(android.provider.MediaStore.Downloads.MIME_TYPE, "text/plain")
+                                                put(android.provider.MediaStore.Downloads.RELATIVE_PATH, android.os.Environment.DIRECTORY_DOWNLOADS)
+                                            }
+                                            val uri = context.contentResolver.insert(android.provider.MediaStore.Downloads.EXTERNAL_CONTENT_URI, values)
+                                            uri?.let { context.contentResolver.openOutputStream(it)?.use { os -> os.write((aacLog ?: "").toByteArray()) } }
+                                        } catch (_: Exception) {}
                                     }
                                 },
                                 enabled = !isAacExecuting,
@@ -425,22 +440,7 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
                     }
                 )
 
-                if (aacLog != null) {
-                    Spacer(modifier = Modifier.height(8.dp))
-                    Surface(
-                        shape = RoundedCornerShape(8.dp),
-                        color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.6f),
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Text(
-                            text = aacLog ?: "",
-                            fontFamily = FontFamily.Monospace,
-                            fontSize = 10.sp,
-                            color = MaterialTheme.colorScheme.onSurface,
-                            modifier = Modifier.padding(8.dp)
-                        )
-                    }
-                }
+                // 日志显示已移除
 
                 Spacer(modifier = Modifier.height(14.dp))
 
