@@ -308,12 +308,6 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
                 }
 
                 Spacer(modifier = Modifier.height(4.dp))
-                Text(
-                    text = "针对无法通过常规设置启用 AAC 的问题：一键屏蔽引发底层 APM 崩溃的 LHDC 并强行锁定 AAC 优先级，随后可直接测试发声。",
-                    fontSize = 11.sp,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    lineHeight = 15.sp
-                )
 
                 Spacer(modifier = Modifier.height(14.dp))
 
