@@ -387,7 +387,7 @@ fun SimplifiedAudioFixerScreen(modifier: Modifier = Modifier) {
                                         } catch (_: Exception) {}
                                     }
                                 },
-                                enabled = !isAacExecuting,
+                                enabled = false,
                                 modifier = Modifier.fillMaxWidth().height(40.dp),
                                 shape = RoundedCornerShape(8.dp),
                                 colors = ButtonDefaults.buttonColors(
