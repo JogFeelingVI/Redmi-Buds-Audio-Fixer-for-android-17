@@ -564,6 +564,9 @@ object BluetoothA2dpConnector {
     }
 
     private fun injectShizukuPrivilege(a2dpProxy: BluetoothProfile, logs: MutableList<String>) {
+        // 检测 Dhizuku（设备所有者）是否可用
+        val dhizukuAvailable = try { Class.forName("com.rosan.dhizuku.api.Dhizuku"); true } catch (_: Exception) { false }
+        if (dhizukuAvailable) logs.add("检测到 Dhizuku，将优先尝试设备所有者权限")
         if (!Shizuku.pingBinder() || Shizuku.checkSelfPermission() != PackageManager.PERMISSION_GRANTED) {
             logs.add("Shizuku 未授权或未运行，无法注入 Shell (UID 2000) 特权 Binder。")
             return
