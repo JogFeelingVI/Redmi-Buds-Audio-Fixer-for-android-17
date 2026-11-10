@@ -602,7 +602,8 @@ object BluetoothA2dpConnector {
             val realBinder = asBinderMethod.invoke(realService) as android.os.IBinder
 
             // Wrap with ShizukuBinderWrapper so transactions execute as UID 2000 (Shell)
-            val wrappedBinder = ShizukuBinderWrapper(realBinder)
+            val wrapperClass = try { Class.forName("com.rosan.dhizuku.api.DhizukuBinderWrapper") } catch (_: Exception) { Class.forName("rikka.shizuku.ShizukuBinderWrapper") }
+            val wrappedBinder = wrapperClass.getConstructor(android.os.IBinder::class.java).newInstance(realBinder)
             val stubClass = Class.forName("android.bluetooth.IBluetoothA2dp\$Stub")
             val privilegedService = stubClass.getMethod("asInterface", android.os.IBinder::class.java).invoke(null, wrappedBinder)
 
@@ -634,7 +635,8 @@ object BluetoothA2dpConnector {
                 if (realService != null) {
                     val asBinderMethod = realService.javaClass.getMethod("asBinder")
                     val realBinder = asBinderMethod.invoke(realService) as android.os.IBinder
-                    val wrappedBinder = ShizukuBinderWrapper(realBinder)
+                    val wrapperClass = try { Class.forName("com.rosan.dhizuku.api.DhizukuBinderWrapper") } catch (_: Exception) { Class.forName("rikka.shizuku.ShizukuBinderWrapper") }
+            val wrappedBinder = wrapperClass.getConstructor(android.os.IBinder::class.java).newInstance(realBinder)
                     val stubClass = Class.forName("android.bluetooth.IBluetooth\$Stub")
                     val privilegedService = stubClass.getMethod("asInterface", android.os.IBinder::class.java).invoke(null, wrappedBinder)
                     serviceField.set(adapter, privilegedService)
